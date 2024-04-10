@@ -63,7 +63,7 @@ const components: { title: string; href: string; description: string }[] = [
 export default function Home() {
   return (
     <main className="flex min-h-screen ">
-      <nav className="fixed inset-x-0 top-0 z-50 bg-white shadow dark:bg-gray-950">
+      <nav className="fixed inset-x-0 top-0 z-50 bg-blur shadow dark:bg-gray-950">
         <div className="container px-4 md:px-6">
           <div className="flex h-14 justify-between items-center">
             <Link className="flex items-center gap-2 text-lg font-semibold" href="#">
@@ -124,14 +124,21 @@ export default function Home() {
                   </NavigationMenuItem>
                   <NavigationMenuItem>
                     <Link href="/docs" legacyBehavior passHref>
-                      <NavigationMenuLink >
-                        IT CorporateTraining
+                      <NavigationMenuLink className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                        IT Corporate Training
+                      </NavigationMenuLink>
+                    </Link>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem >
+                    <Link href="/docs" legacyBehavior passHref>
+                      <NavigationMenuLink className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                        Review
                       </NavigationMenuLink>
                     </Link>
                   </NavigationMenuItem>
                   <NavigationMenuItem>
                     <Link href="/docs" legacyBehavior passHref>
-                      <NavigationMenuLink >
+                      <NavigationMenuLink className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                         Contract
                       </NavigationMenuLink>
                     </Link>
