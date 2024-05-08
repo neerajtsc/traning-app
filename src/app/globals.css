@@ -71,11 +71,100 @@
       @apply border-border;
     }
     body {
-      @apply bg-background text-foreground;
+      background-color: black;
+      color: white;
     }
+    
   }
 
 .compiler_bg{
   background: linear-gradient(176.71deg, rgba(173, 206, 255, 0) 4.21%, rgba(173, 206, 255, 0.24) 95.79%), #F0F5FF !important;
 }  
+.contentContainer{
+  width: 88%;
+}
 
+.typing-animation {
+  font-size: 24px; /* Adjust font size */
+  border-right: 2px solid transparent; /* Create a border that will simulate typing */
+  padding-right: 5px; /* Add padding for cursor */
+  display: inline-block;
+}
+
+.typing-cursor {
+  animation: blink-caret 0.50s step-end infinite; /* Blinking cursor animation */
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black; /* Color of the cursor */
+  }
+}
+
+.studyImageContainer{
+  box-shadow: -3px 2px 16px whitesmoke;
+}
+
+.studyImageContainer img {
+  width: 100%; /* Adjust as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 10px; /* Adjust spacing between images */
+  opacity: 0; /* Initially hide all images */
+  position: relative; /* To allow z-index to work */
+  animation-fill-mode: forwards; /* Ensure the images stay visible after animation ends */
+}
+.studyImageContainer img:nth-child(1) {
+  animation: slideInFromLeft 1s ease-out 0s infinite; /* Animation for the first image */
+}
+.studyImageContainer img:nth-child(2) {
+  animation: slideInFromRight 1s ease-out 2s infinite; /* Animation for the second image */
+}
+.studyImageContainer img:nth-child(3) {
+  animation: slideInFromTop 1s ease-out 4s infinite; /* Animation for the third image */
+}
+.studyImageContainer img:nth-child(4) {
+  animation: slideInFromBottom 1s ease-out 6s infinite; /* Animation for the fourth image */
+}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

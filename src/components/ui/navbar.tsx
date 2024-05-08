@@ -54,17 +54,17 @@ const components: { title: string; href: string; description: string }[] = [
 
 export default function Navbar() {
     return (
-        <nav className="fixed inset-x-0 top-0 z-50  shadow dark:bg-gray-950 bg-gradient-to-r from-indigo-100 to-blue-200 via-purple-100" >
+        <nav className="fixed inset-x-0 top-0 p-5 z-50 dark:bg-gray-950 from-indigo-100 to-blue-200 via-purple-100 bg-black" >
             <div className="container px-4 md:px-6">
                 <div className="flex h-14 justify-between items-center">
-                    <Link className="flex items-center gap-2 text-lg font-semibold" href="/">
+                    {/* <Link className="flex items-center gap-2 text-lg font-semibold" href="/">
                         <Image src="/images/tsc.png" width={150} height={100} alt="" className="" />
-                    </Link>
+                    </Link> */}
                     <nav className=" flex items-center space-x-4">
                         <NavigationMenu>
                             <NavigationMenuList>
                                 <NavigationMenuItem>
-                                    <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+                                    <NavigationMenuTrigger className="text-xl">Getting started</NavigationMenuTrigger>
                                     <NavigationMenuContent>
                                         <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                                             <li className="row-span-3">
@@ -98,7 +98,7 @@ export default function Navbar() {
                                     </NavigationMenuContent>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
-                                    <NavigationMenuTrigger>Curriculum</NavigationMenuTrigger>
+                                    <NavigationMenuTrigger className="text-xl">Curriculum</NavigationMenuTrigger>
                                     <NavigationMenuContent>
                                         <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                                             {components.map((component) => (
@@ -115,21 +115,21 @@ export default function Navbar() {
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
                                     <Link href="/docs" legacyBehavior passHref>
-                                        <NavigationMenuLink className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                                        <NavigationMenuLink className="block text-xl select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                                             IT Corporate Training
                                         </NavigationMenuLink>
                                     </Link>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem >
                                     <Link href="/docs" legacyBehavior passHref>
-                                        <NavigationMenuLink className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                                        <NavigationMenuLink className="block select-none text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                                             Review
                                         </NavigationMenuLink>
                                     </Link>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
                                     <Link href="/docs" legacyBehavior passHref>
-                                        <NavigationMenuLink className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                                        <NavigationMenuLink className="block text-xl select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                                             Contract
                                         </NavigationMenuLink>
                                     </Link>

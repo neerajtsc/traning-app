@@ -6,6 +6,7 @@ import { SelectValue, SelectTrigger, SelectLabel, SelectItem, SelectGroup, Selec
 import { Button } from "@/components/ui/button"
 import { CardContent, Card } from "@/components/ui/card"
 import { PhoneInput } from "@/components/ui/phone";
+import { useState, useEffect } from 'react';
 import {
   Accordion,
   AccordionContent,
@@ -22,25 +23,45 @@ import {
 import Autoplay from "embla-carousel-autoplay"
 
 export default function Home() {
+  const [text, setText] = useState('');
+  const [animationFinished, setAnimationFinished] = useState(false);
+  const fullText = "Become the software engineer that companies love to hire ...";
+  useEffect(() => {
+    let currentIndex = 0;
+    const interval = setInterval(() => {
+      if (currentIndex <= fullText.length) {
+        setText(fullText.slice(0, currentIndex));
+        currentIndex++;
+      } else {
+        clearInterval(interval);
+        setAnimationFinished(true);
+      }
+    }, 100); // Adjust typing speed here (milliseconds)
+
+    return () => clearInterval(interval); // Clean up on component unmount
+  }, [fullText]);
   return (
     <>
-      <main className="flex min-h-screen ">
+      <main className="flex">
         <div className="relative -mt-[5.75rem] overflow-hidden pb-16 pt-[5.75rem] w-full">
-          <img src="/images/beams-home@95.jpg" alt="" className="absolute -top-[1rem] left-1/2 -ml-[40rem] w-[163.125rem] max-w-none sm:-ml-[67.5rem]" />
-          <div className="relative mx-auto mt-16 grid w-full max-w-container grid-cols-1 px-4 sm:mt-20 sm:px-6 lg:px-8 xl:mt-20">
+          {/* <img src="/images/beams-home@95.jpg" alt="" className="absolute -top-[1rem] left-1/2 -ml-[40rem] w-[163.125rem] max-w-none sm:-ml-[67.5rem]" /> */}
+          <div className="relative mx-auto mt-16 grid contentContainer max-w-container grid-cols-1 px-4 sm:mt-20 sm:px-6 lg:px-8 xl:mt-32">
             <div className="col-start-1 row-start-1 h-7 text-base font-bold leading-7 text-sky-500" aria-hidden="true"></div>
-            <h1 className="col-start-1 row-start-2 mt-4 max-w-[36rem] text-5xl sm:leading-tight font-extrabold tracking-tight text-slate-900 sm:text-6xl  xl:max-w-[43.5rem]">Become the software engineer that companies love to hire</h1>
-            <p className="col-start-1 row-start-3 mt-4 max-w-lg text-lg text-slate-700">Welcome to India’s most Innovative Institute of IT Training.</p>
-            <div className="col-start-1 row-start-4 mt-10 flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-              <a className="inline-flex justify-center rounded-lg text-sm font-bold py-3 px-4 bg-slate-900 text-white hover:bg-slate-700" href="/components">
-                <span>
+            <div className="h-64 typing-animation col-start-1 row-start-2 mt-4 max-w-[36rem] text-5xl sm:leading-tight font-extrabold tracking-tight text-slate-900 sm:text-6xl text-white xl:max-w-[50.5rem]">
+              {text}
+              {!animationFinished && <span className="typing-cursor">_</span>} 
+              </div>
+            <p className="col-start-1 row-start-3 mt-4 text-xl text-slate-700 text-white xl:max-w-[50.5rem]">Welcome to India’s most Innovative Institute of IT Training.</p>
+            <div className="col-start-1 row-start-4 mt-20 mb-8 flex bg- flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+              <a className="inline-flex justify-center bg-white rounded-lg text-sm font-bold py-3 px-4 bg-slate-900 text-white hover:bg-slate-700" href="/components">
+                <span className="text-black">
                   Browse Learning Paths <span aria-hidden="true" className="hidden text-slate-400 sm:inline">→</span>
                 </span>
               </a>
             </div>
-            <div className=" col-start-1  row-start-5 flex md:row-span-3 md:row-start-3 lg:row-span-4 lg:row-start-2 xl:row-span-5 xl:row-start-1 xl:justify-end">
-              <div className="-ml-[32rem] mt-12 h-[46.375rem] origin-top scale-[calc(204/299)] select-none sm:-ml-[24rem] sm:-mt-20 sm:h-auto sm:transform-none md:-ml-64 md:mt-10 lg:-ml-16 lg:mt-0 xl:-mr-4 xl:ml-0">
-                <div className="flex justify-end">
+            <div className=" col-start-1 row-start-5 flex md:row-span-3 md:row-start-3 lg:row-span-4 lg:row-start-2 xl:row-span-5 xl:row-start-1 xl:justify-end">
+              <div className="w-2/5 -ml-[32rem] mt-12 h-[46.375rem] origin-top scale-[calc(204/299)] select-none sm:-ml-[24rem] sm:-mt-20 sm:h-auto sm:transform-none md:-ml-64 md:mt-10 lg:-ml-16 lg:mt-0 xl:-mr-4 xl:ml-0">
+                {/* <div className="flex justify-end">
                   <div className="relative flex items-end">
                     <div className="absolute -inset-x-8 bottom-0 h-px bg-slate-900/15 [mask-image:linear-gradient(to_right,transparent,white_4rem,white_calc(100%-4rem),transparent)]"></div>
                     <div className="absolute left-16 top-full -mt-px h-8 overflow-hidden">
@@ -99,7 +120,7 @@ export default function Home() {
                                 </div>
                                 <div className="space-y-1">
                                   <Label htmlFor="Contract">Contract</Label>
-                                  {/* <Input id="Contract" placeholder="Enter your Contract" type="number" /> */}
+                                  <Input id="Contract" placeholder="Enter your Contract" type="number" />
                                   <PhoneInput placeholder="Enter a phone number" defaultCountry="IN" maxLength={12} />
                                 </div>
                                 <Button className="bg-gray-800 text-white" type="submit">
@@ -112,6 +133,12 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
+                </div> */}
+                <div className="p-3 flex overflow-hidden mt-12 studyImageContainer rounded-xl">
+                <img src="/images/studyOne.jpg" className="rounded-xl"></img>
+                <img src="/images/studyTwo.jpg" className="rounded-xl"></img>
+                <img src="/images/studyThree.jpg" className="rounded-xl"></img>
+                <img src="/images/studyFour.jpg" className="rounded-xl"></img>
                 </div>
               </div>
             </div>
@@ -119,7 +146,7 @@ export default function Home() {
         </div>
       </main>
       <div className="px-16">
-        <p className=" my-12 text-center text-2xl font-bold text-slate-700">Web Design Course Curriculum</p>
+        <p className=" my-12 text-center text-6xl font-bold">Web Design Course Curriculum</p>
         <Accordion type="single" collapsible className="w-ful rounded p-4">
           <AccordionItem value="item-1">
             <AccordionTrigger className="font-bold text-xl">Module: 1  Introduction about Web Design</AccordionTrigger>
@@ -263,7 +290,7 @@ export default function Home() {
 
         </Accordion>
       </div>
-      <div className="p-14 bg-slate-100">
+      <div className="p-14">
         <p className=" my-8 text-center text-2xl font-bold text-slate-700">
           Web Design platforms and tools
         </p>
