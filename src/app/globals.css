@@ -84,6 +84,51 @@
   width: 88%;
 }
 
+.glassBackground {
+  /* border-radius: 40px; */
+  background-image: linear-gradient(357deg, black 0%, #0e0d0d 100%);
+  /* padding: 10px 0; */
+}
+
+.thread {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px; /* adjust width according to your design */
+  height: 100%;
+  background-color: #ff0000; /* adjust color according to your design */
+  z-index: 999;
+  /* Additional styling for the thread */
+}
+
+.imageCard {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.textSection {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title3{
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0px 0 28px;
+}
+
+.description{
+    font-size: 16px;
+    opacity: 0.8;
+    max-width: 80%;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+}
+
 .typing-animation {
   font-size: 24px; /* Adjust font size */
   border-right: 2px solid transparent; /* Create a border that will simulate typing */

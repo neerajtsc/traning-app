@@ -63,7 +63,7 @@ export default function Navbar() {
                     <nav className=" flex items-center space-x-4">
                         <NavigationMenu>
                             <NavigationMenuList>
-                                <NavigationMenuItem>
+                                {/* <NavigationMenuItem>
                                     <NavigationMenuTrigger className="text-xl">Getting started</NavigationMenuTrigger>
                                     <NavigationMenuContent>
                                         <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
@@ -112,11 +112,32 @@ export default function Navbar() {
                                             ))}
                                         </ul>
                                     </NavigationMenuContent>
+                                </NavigationMenuItem> */}
+                                <NavigationMenuItem>
+                                    <Link href="/" legacyBehavior passHref>
+                                        <NavigationMenuLink className="block text-xl select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                                            Home
+                                        </NavigationMenuLink>
+                                    </Link>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
                                     <Link href="/course" legacyBehavior passHref>
                                         <NavigationMenuLink className="block text-xl select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                                            IT Corporate Training
+                                            Courses
+                                        </NavigationMenuLink>
+                                    </Link>
+                                </NavigationMenuItem>
+                                <NavigationMenuItem>
+                                    <Link href="/process" legacyBehavior passHref>
+                                        <NavigationMenuLink className="block text-xl select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                                            Process
+                                        </NavigationMenuLink>
+                                    </Link>
+                                </NavigationMenuItem>
+                                <NavigationMenuItem>
+                                    <Link href="/training" legacyBehavior passHref>
+                                        <NavigationMenuLink className="block text-xl select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                                            Training
                                         </NavigationMenuLink>
                                     </Link>
                                 </NavigationMenuItem>
@@ -128,9 +149,16 @@ export default function Navbar() {
                                     </Link>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
+                                    <Link href="/gallery" legacyBehavior passHref>
+                                        <NavigationMenuLink className="block text-xl select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                                            Gallery
+                                        </NavigationMenuLink>
+                                    </Link>
+                                </NavigationMenuItem>
+                                <NavigationMenuItem>
                                     <Link href="/docs" legacyBehavior passHref>
                                         <NavigationMenuLink className="block text-xl select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                                            Contract
+                                            Contact
                                         </NavigationMenuLink>
                                     </Link>
                                 </NavigationMenuItem>

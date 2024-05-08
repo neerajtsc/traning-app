@@ -291,8 +291,11 @@ export default function Home() {
         </Accordion>
       </div> */}
       <div className="p-14">
-        <p className=" my-8 text-center text-2xl font-bold text-slate-700">
-          Web Design platforms and tools
+        <p className="my-8 text-center text-6xl font-bold text-slate-700 text-white">
+          We're working on
+        </p>
+        <p className="my-8 text-center text-6xl font-bold text-slate-700 text-white">
+          some cool technologies
         </p>
         <div className="grid grid-rows-2  grid-cols-6 grid-flow-col gap-4 mt-4">
           <div className="flex justify-center items-center bg-white p-5 rounded-xl bg-opacity-60 backdrop-filter backdrop-blur-lg transform scale-100 hover:scale-110 ">
@@ -355,7 +358,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="p-14 ">
+      {/* <div className="p-14 ">
         <p className=" my-4 text-center text-2xl font-bold text-slate-700">
           Welcome Aboard
         </p>
@@ -382,7 +385,7 @@ export default function Home() {
           <CarouselNext />
         </Carousel>
 
-      </div>
+      </div> */}
       <div className="p-14 ">
         <p className=" my-4 text-center text-2xl font-bold text-slate-700">
           Reviews
