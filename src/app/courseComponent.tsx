@@ -4,11 +4,30 @@ import {
     AccordionItem,
     AccordionTrigger,
   } from "../components/ui/accordion";
-const Course = () => {
+  import { useState, useEffect } from 'react';
+  const Course = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      const element = document.getElementById('course-heading');
+      if (!element) return;
+      
+      const top = element.getBoundingClientRect().top;
+      const isVisible = top >= 0 && top <= window.innerHeight;
+      setIsVisible(isVisible);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check visibility on initial render
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
     return (
         <>
          <div className="px-16 mt-40">
-        <p className=" my-12 text-center text-6xl font-bold">Web Design Course Curriculum</p>
+        <p className={`my-14 text-center text-6xl font-bold ${isVisible ? 'heading' : ''}`} id="course-heading">Web Design Course Curriculum</p>
         <Accordion type="single" collapsible className="w-ful rounded p-4">
           <AccordionItem value="item-1">
             <AccordionTrigger className="font-bold text-xl">Module: 1  Introduction about Web Design</AccordionTrigger>
