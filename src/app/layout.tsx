@@ -5,10 +5,10 @@ import Navbar from "@/components/ui/navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Traning App",
-  description: "",
-};
+// export const metadata: Metadata = {
+//   title: "Training App",
+//   description: "",
+// };
 
 export default function RootLayout({
   children,
@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>Traning Apps</title>
+        <title>Training Apps</title>
         <link rel="shortcut icon" href="/images/favicon.png" />
       </head>
       <body className={inter.className}>
