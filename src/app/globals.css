@@ -105,66 +105,68 @@
 }
 
 .studyImageContainer{
-  box-shadow: -3px 2px 16px whitesmoke;
+  /* box-shadow: -3px 2px 16px whitesmoke; */
+  height: 30rem;
+  width: 40rem;
 }
 
-.studyImageContainer img {
-  width: 100%; /* Adjust as needed */
-  height: auto; /* Maintain aspect ratio */
-  margin-right: 10px; /* Adjust spacing between images */
-  opacity: 0; /* Initially hide all images */
-  position: relative; /* To allow z-index to work */
-  animation-fill-mode: forwards; /* Ensure the images stay visible after animation ends */
+.studyImage {
+  position: absolute;
+  width: 95%;
+  height: 94%;
+  opacity: 0;
 }
-.studyImageContainer img:nth-child(1) {
-  animation: slideInFromLeft 1s ease-out 0s infinite; /* Animation for the first image */
+
+.animate {
+  animation: imageAnimation 8s infinite;
 }
-.studyImageContainer img:nth-child(2) {
-  animation: slideInFromRight 1s ease-out 2s infinite; /* Animation for the second image */
-}
-.studyImageContainer img:nth-child(3) {
-  animation: slideInFromTop 1s ease-out 4s infinite; /* Animation for the third image */
-}
-.studyImageContainer img:nth-child(4) {
-  animation: slideInFromBottom 1s ease-out 6s infinite; /* Animation for the fourth image */
-}
-@keyframes slideInFromLeft {
+
+@keyframes imageAnimation {
   0% {
-    transform: translateX(-100%);
     opacity: 0;
-  }
-  100% {
     transform: translateX(0);
-    opacity: 1;
   }
-}
-@keyframes slideInFromRight {
-  0% {
+  25% {
+    opacity: 0;
     transform: translateX(100%);
-    opacity: 0;
   }
-  100% {
+  50% {
+    opacity: 1;
     transform: translateX(0);
-    opacity: 1;
   }
-}
-@keyframes slideInFromTop {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
+  75% {
+    opacity: 1;
+    transform: translateX(0);
   }
   100% {
-    transform: translateY(0);
-    opacity: 1;
+    opacity: 0;
+    transform: translateX(-100%);
   }
 }
-@keyframes slideInFromBottom {
+
+.ourWorkingTech{
+  width: 15%;
+}
+
+.ourWorkingTech div{
+padding: 50px;
+background-color: #0d0d0d;
+}
+
+/* styles.css */
+
+@keyframes dropAnimation {
   0% {
-    transform: translateY(100%);
     opacity: 0;
+    transform: translateY(-50px);
   }
   100% {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0);
   }
+}
+
+.heading {
+  opacity: 0;
+  animation: dropAnimation 0.5s ease-in-out forwards;
 }
