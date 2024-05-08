@@ -1,25 +1,25 @@
 "use client"
 import * as React from "react"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
-import { SelectValue, SelectTrigger, SelectLabel, SelectItem, SelectGroup, SelectContent, Select } from "@/components/ui/select"
-import { Button } from "@/components/ui/button"
-import { CardContent, Card } from "@/components/ui/card"
-import { PhoneInput } from "@/components/ui/phone";
+import { Label } from "../components/ui/label"
+import { Input } from "../components/ui/input"
+import { SelectValue, SelectTrigger, SelectLabel, SelectItem, SelectGroup, SelectContent, Select } from "../components/ui/select"
+import { Button } from "../components/ui/button"
+import { CardContent, Card } from "../components/ui/card"
+import { PhoneInput } from "../components/ui/phone";
 import { useState, useEffect } from 'react';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
+} from "../components/ui/accordion";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel"
+} from "../components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
 
 export default function Home() {
@@ -145,7 +145,7 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <div className="px-16">
+      {/* <div className="px-16">
         <p className=" my-12 text-center text-6xl font-bold">Web Design Course Curriculum</p>
         <Accordion type="single" collapsible className="w-ful rounded p-4">
           <AccordionItem value="item-1">
@@ -289,7 +289,7 @@ export default function Home() {
           </AccordionItem>
 
         </Accordion>
-      </div>
+      </div> */}
       <div className="p-14">
         <p className=" my-8 text-center text-2xl font-bold text-slate-700">
           Web Design platforms and tools
