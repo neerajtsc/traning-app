@@ -6,7 +6,7 @@ const contact = () => {
   return (
     <RootLayout>
       <div className="mt-32">
-        <div className="w-11/12 m-auto ps-16 pe-16 pt-5">
+        <div className="w-11/12 m-auto ps-16 pe-16 pt-5 flex">
           <div>
             <div className="contactUsHeading">
                 <h1 className="">Why head into the battlefield unprepared?</h1>

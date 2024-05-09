@@ -230,6 +230,7 @@
 .ourWorkingTech div{
 padding: 50px;
 background-color: #0d0d0d;
+border: none;
 }
 
 /* styles.css */
@@ -248,4 +249,65 @@ background-color: #0d0d0d;
 .heading {
   opacity: 0;
   animation: dropAnimation 0.5s ease-in-out forwards;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glassIco {
+  --width: 200px;
+  &, & * {
+    box-sizing: border-box;
+    transition: 5000s; /* Adjust transition times as needed */
+  }
+  width: var(--width);
+  height: var(--width);
+  color: #fff;
+  font-size: 30px;
+  border-radius: 5px;
+
+  /* Glass-like background with subtle reflections and blur */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px) grayscale(0.1); /* Adjust blur and grayscale intensity */
+
+  /* Optional: Inner shadow for depth */
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-right-color: rgba(255, 255, 255, 0.1);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+
+  text-decoration: none;
+  margin: 20px;
+  overflow: hidden;
+  @include flex-center;
+
+  /* Pseudo-element for "gloss" effect */
+  &:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%; /* Expands to cover entire element */
+    height: 100%;
+    filter: blur(2px);
+    transition: 3000ms;
+    transform: skewX(0deg) translateX(0); /* No initial skew or translation */
+  }
+
+  &:hover {
+    transform: translateY(-20px);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.0)); /* Creates horizontal gradient for shine */
+    &:before {
+      transform: skewX(45deg) translateX(calc(var(--width) * -1 - 50%)); /* Maintain skew on hover */
+      background: linear-gradient(to right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.0)); /* Creates horizontal gradient for shine */
+    }
+  }
+
+  /* Text or content within the element */
+  & > * {
+    opacity: 0.8;
+  }
 }
