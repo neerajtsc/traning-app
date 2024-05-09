@@ -73,6 +73,7 @@
     body {
       background-color: black;
       color: white;
+      overflow-x: hidden;
     }
     
   }
@@ -86,7 +87,10 @@
 
 .glassBackground {
   /* border-radius: 40px; */
-  background-image: linear-gradient(357deg, black 0%, #0e0d0d 100%);
+  background-image: linear-gradient(357deg,rgb(57, 54, 54), #0e0d0d 100%);
+  width: 48em;
+  padding: 45px 66px;
+  /* z-index: 999; */
   /* padding: 10px 0; */
 }
 
@@ -95,11 +99,41 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 2px; /* adjust width according to your design */
+  width: 5px; /* adjust width according to your design */
   height: 100%;
-  background-color: #ff0000; /* adjust color according to your design */
-  z-index: 999;
+  background-color: rgb(34 197 94); /* adjust color according to your design */
+  z-index: -1;
+  transition: opacity 10s ease; /* adjust duration and easing as needed */
   /* Additional styling for the thread */
+}
+
+.containerLast {
+  width:100vw;
+  height:10rem;
+  z-index: 999;
+  background-color: #000;
+}
+
+.counter {
+  background-image: linear-gradient(357deg,grey, #0e0d0d 100%);
+  width: 70px;
+  height: 70px;
+  border-radius:45px;
+  font-size: 41px;
+  padding-left: 23px;
+  padding-top: 3px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.path {
+  position: fixed;
+  top: 0;
+  left: 49.99%;
+  height: 100%;
+  /* background-color: #fff; */
+  z-index: -999;
+  border: 1px solid #fff;
+  border-style: dashed;
 }
 
 .imageCard {

@@ -21,6 +21,7 @@ import {
   CarouselPrevious,
 } from "../components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
+import Link from 'next/link'
 
 export default function Home() {
   const [text, setText] = useState('');
@@ -52,6 +53,11 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
+  const handleClick = () => {
+    debugger
+    console.log("dsfsiu");
+  }
+
   
   return (
     <>
@@ -65,12 +71,12 @@ export default function Home() {
               {!animationFinished && <span className="typing-cursor">_</span>} 
               </div>
             <p className="col-start-1 row-start-3 mt-4 text-2xl text-slate-700 text-white xl:max-w-[50.5rem]">Welcome to India’s most Innovative Institute of IT Training.</p>
-            <div className="col-start-1 row-start-4 mt-20 mb-8 flex bg- flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-              <a className="inline-flex justify-center bg-white rounded-lg text-lg p-5 font-bold py-3 px-4 bg-slate-900 text-white hover:bg-slate-700" href="/components">
+            <div className="col-start-1 row-start-4 mt-20 mb-8 flex bg- flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0 cursor-pointer" onClick={() => handleClick()}>
+              <Link className="inline-flex justify-center bg-white rounded-lg text-lg p-5 font-bold py-3 px-4 bg-slate-900 text-white hover:bg-slate-700" href="/course">
                 <span className="text-black">
-                  Browse Learning Paths <span aria-hidden="true" className="hidden text-slate-400 sm:inline">→</span>
+                  Explore <span aria-hidden="true" className="hidden text-slate-400 sm:inline">→</span>
                 </span>
-              </a>
+              </Link>
             </div>
             <div className=" col-start-1 row-start-5 flex md:row-span-3 md:row-start-3 lg:row-span-4 lg:row-start-2 xl:row-span-5 xl:row-start-1 xl:justify-end">
               <div className="w-2/5 -ml-[32rem] mt-12 h-[46.375rem] origin-top scale-[calc(204/299)] select-none sm:-ml-[24rem] sm:-mt-20 sm:h-auto sm:transform-none md:-ml-64 md:mt-10 lg:-ml-16 lg:mt-0 xl:-mr-4 xl:ml-0">
@@ -357,7 +363,7 @@ export default function Home() {
                 </svg>
               </div>
               <div className="mt-4 flex justify-center items-center p-5 rounded-xl bg-opacity-60 backdrop-filter backdrop-blur-lg transform scale-100 hover:scale-110 ">
-                <svg fill="#2646E5" viewBox="0 0 24 24" role="img" width="100" height="100" xmlns="http://www.w3.org/2000/svg" stroke="#2646E5"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>Atlassian icon</title>
+                <svg fill="#2646E5" viewBox="0 0 24 24" role="img" width="100" height="100" xmlns="http://www.w3.org/2000/svg" stroke="#2646E5"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"><title>Atlassian icon</title>
                   <path d="M19.31 23.957H15.71a1.26 1.26 0 0 1-1.312-.792c-1.332-2.665-2.78-5.288-3.987-8.046a15.25 15.25 0 0 1 .885-14.47c.166-.281.52-.625.791-.625s.593.375.74.666q5.444 10.89 10.898 21.788c.542 1.041.292 1.468-.905 1.479zm-14.573 0H1.04c-1.041 0-1.27-.417-.812-1.333q2.8-5.538 5.549-11.055c.5-1.041.895-1.041 1.592-.177a12.221 12.221 0 0 1 2.51 11.17c-.344 1.322-.532 1.405-1.864 1.405z"></path>
                 </g></svg>
               </div>
@@ -396,7 +402,7 @@ export default function Home() {
                 </svg>
               </div>
               <div className="mt-4 flex justify-center items-center p-5 rounded-xl bg-opacity-60 backdrop-filter backdrop-blur-lg transform scale-100 hover:scale-110 ">
-                <svg width="100px" height="100px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M119.616813,0.0688905149 C119.066276,0.118932037 117.314565,0.294077364 115.738025,0.419181169 C79.3775171,3.69690087 45.3192571,23.3131775 23.7481916,53.4631946 C11.7364614,70.2271045 4.05395894,89.2428829 1.15112414,109.384595 C0.12512219,116.415429 0,118.492153 0,128.025062 C0,137.557972 0.12512219,139.634696 1.15112414,146.665529 C8.10791789,194.730411 42.3163245,235.11392 88.7116325,250.076335 C97.0197458,252.753556 105.778299,254.580072 115.738025,255.680985 C119.616813,256.106338 136.383187,256.106338 140.261975,255.680985 C157.453763,253.779407 172.017986,249.525878 186.382014,242.194795 C188.584164,241.068861 189.00958,240.768612 188.709286,240.518404 C188.509091,240.36828 179.124927,227.782837 167.86393,212.570214 L147.393939,184.922273 L121.743891,146.965779 C107.630108,126.098464 96.0187683,109.034305 95.9186706,109.034305 C95.8185728,109.009284 95.7184751,125.873277 95.6684262,146.465363 C95.5933529,182.52028 95.5683284,183.971484 95.1178886,184.82219 C94.4672532,186.048207 93.9667644,186.548623 92.915738,187.099079 C92.114956,187.499411 91.4142717,187.574474 87.6355816,187.574474 L83.3063539,187.574474 L82.1552297,186.848872 C81.4044966,186.373477 80.8539589,185.747958 80.4785924,185.022356 L79.9530792,183.896422 L80.0031281,133.729796 L80.0782014,83.5381493 L80.8539589,82.5623397 C81.25435,82.0369037 82.1051808,81.3613431 82.7057674,81.0360732 C83.7317693,80.535658 84.1321603,80.4856165 88.4613881,80.4856165 C93.5663734,80.4856165 94.4172043,80.6857826 95.7434995,82.1369867 C96.1188661,82.5373189 110.007429,103.454675 126.623656,128.650581 C143.239883,153.846488 165.962072,188.250034 177.122972,205.139048 L197.392766,235.839522 L198.418768,235.163961 C207.502639,229.259062 217.112023,220.852086 224.719453,212.09482 C240.910264,193.504394 251.345455,170.835585 254.848876,146.665529 C255.874878,139.634696 256,137.557972 256,128.025062 C256,118.492153 255.874878,116.415429 254.848876,109.384595 C247.892082,61.3197135 213.683675,20.9362052 167.288368,5.97379012 C159.105376,3.32158945 150.396872,1.49507389 140.637341,0.394160408 C138.234995,0.143952798 121.693842,-0.131275573 119.616813,0.0688905149 L119.616813,0.0688905149 Z M172.017986,77.4831252 C173.219159,78.0836234 174.195112,79.2345784 174.545455,80.435575 C174.74565,81.0861148 174.795699,94.9976579 174.74565,126.348671 L174.670577,171.336 L166.73783,159.17591 L158.780059,147.01582 L158.780059,114.313685 C158.780059,93.1711423 158.880156,81.2862808 159.030303,80.7108033 C159.430694,79.3096407 160.306549,78.2087272 161.507722,77.5581875 C162.533724,77.0327515 162.909091,76.98271 166.837928,76.98271 C170.541544,76.98271 171.19218,77.0327515 172.017986,77.4831252 Z" fill="#000000"> </path> </g> </g></svg>
+                <svg width="100px" height="100px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" fill="#000000"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M119.616813,0.0688905149 C119.066276,0.118932037 117.314565,0.294077364 115.738025,0.419181169 C79.3775171,3.69690087 45.3192571,23.3131775 23.7481916,53.4631946 C11.7364614,70.2271045 4.05395894,89.2428829 1.15112414,109.384595 C0.12512219,116.415429 0,118.492153 0,128.025062 C0,137.557972 0.12512219,139.634696 1.15112414,146.665529 C8.10791789,194.730411 42.3163245,235.11392 88.7116325,250.076335 C97.0197458,252.753556 105.778299,254.580072 115.738025,255.680985 C119.616813,256.106338 136.383187,256.106338 140.261975,255.680985 C157.453763,253.779407 172.017986,249.525878 186.382014,242.194795 C188.584164,241.068861 189.00958,240.768612 188.709286,240.518404 C188.509091,240.36828 179.124927,227.782837 167.86393,212.570214 L147.393939,184.922273 L121.743891,146.965779 C107.630108,126.098464 96.0187683,109.034305 95.9186706,109.034305 C95.8185728,109.009284 95.7184751,125.873277 95.6684262,146.465363 C95.5933529,182.52028 95.5683284,183.971484 95.1178886,184.82219 C94.4672532,186.048207 93.9667644,186.548623 92.915738,187.099079 C92.114956,187.499411 91.4142717,187.574474 87.6355816,187.574474 L83.3063539,187.574474 L82.1552297,186.848872 C81.4044966,186.373477 80.8539589,185.747958 80.4785924,185.022356 L79.9530792,183.896422 L80.0031281,133.729796 L80.0782014,83.5381493 L80.8539589,82.5623397 C81.25435,82.0369037 82.1051808,81.3613431 82.7057674,81.0360732 C83.7317693,80.535658 84.1321603,80.4856165 88.4613881,80.4856165 C93.5663734,80.4856165 94.4172043,80.6857826 95.7434995,82.1369867 C96.1188661,82.5373189 110.007429,103.454675 126.623656,128.650581 C143.239883,153.846488 165.962072,188.250034 177.122972,205.139048 L197.392766,235.839522 L198.418768,235.163961 C207.502639,229.259062 217.112023,220.852086 224.719453,212.09482 C240.910264,193.504394 251.345455,170.835585 254.848876,146.665529 C255.874878,139.634696 256,137.557972 256,128.025062 C256,118.492153 255.874878,116.415429 254.848876,109.384595 C247.892082,61.3197135 213.683675,20.9362052 167.288368,5.97379012 C159.105376,3.32158945 150.396872,1.49507389 140.637341,0.394160408 C138.234995,0.143952798 121.693842,-0.131275573 119.616813,0.0688905149 L119.616813,0.0688905149 Z M172.017986,77.4831252 C173.219159,78.0836234 174.195112,79.2345784 174.545455,80.435575 C174.74565,81.0861148 174.795699,94.9976579 174.74565,126.348671 L174.670577,171.336 L166.73783,159.17591 L158.780059,147.01582 L158.780059,114.313685 C158.780059,93.1711423 158.880156,81.2862808 159.030303,80.7108033 C159.430694,79.3096407 160.306549,78.2087272 161.507722,77.5581875 C162.533724,77.0327515 162.909091,76.98271 166.837928,76.98271 C170.541544,76.98271 171.19218,77.0327515 172.017986,77.4831252 Z" fill="#000000"> </path> </g> </g></svg>
               </div>
             </div>
 
@@ -440,7 +446,7 @@ export default function Home() {
             {Array.from({ length: 7 }).map((_, index) => (
               <CarouselItem key={index} className="pl-1 ">
                 <div className="p-1">
-                  <Card className="relative flex flex-col mt-6 text-gray-700 bg-black shadow-md bg-clip-border rounded-xl p-4">
+                  <Card className="relative flex flex-col mt-6  bg-black shadow-md bg-clip-border rounded-xl p-4">
                     <article>
                       <div className="flex items-center mb-4">
                         <img className="w-10 h-10 me-4 rounded-full" src={`https://randomuser.me/api/portraits/men/${20 + index}.jpg`} alt="d" />
@@ -464,7 +470,7 @@ export default function Home() {
                         <svg className="w-4 h-4 text-gray-300 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                           <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
                         </svg>
-                        <h3 className="ms-2 text-sm font-semibold text-gray-900 dark:text-white text-white">Thinking to buy another one!</h3>
+                        <h3 className="ms-2 text-sm font-semibold  dark:text-white text-white">Thinking to buy another one!</h3>
                       </div>
                       <footer className="mb-5 text-white text-sm text-gray-500 dark:text-gray-400"><p>Reviewed in the United Kingdom on <time>March 3, 2017</time></p></footer>
                       <p className="mb-2 text-white text-gray-500 dark:text-gray-400">This is my third Invicta Pro Diver. They are just fantastic value for money. This one arrived yesterday and the first thing I did was set the time, popped on an identical strap from another Invicta and went in the shower with it to test the waterproofing.... No problems.</p>
@@ -473,7 +479,7 @@ export default function Home() {
                       <aside>
                         <p className="mt-1 text-xs text-white text-gray-500 dark:text-gray-400">19 people found this helpful</p>
                         <div className="flex items-center mt-3">
-                          <a href="#" className="px-2 py-1.5 text-xs font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Helpful</a>
+                          <a href="#" className="px-2 py-1.5 text-xs font-medium  focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Helpful</a>
                           <a href="#" className="ps-4 text-sm font-medium text-blue-600 hover:underline dark:text-blue-500 border-gray-200 ms-4 border-s md:mb-0 dark:border-gray-600">Report abuse</a>
                         </div>
                       </aside>
@@ -489,14 +495,14 @@ export default function Home() {
 
       </div>
       <div className="">
-        <footer className="bg-white">
+        <footer className="bg-dark text-white">
           <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
             <div className="lg:flex lg:items-start lg:gap-8">
               <div className="text-teal-600">
                 <svg className="h-8" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M0.41 10.3847C1.14777 7.4194 2.85643 4.7861 5.2639 2.90424C7.6714 1.02234 10.6393 0 13.695 0C16.7507 0 19.7186 1.02234 22.1261 2.90424C24.5336 4.7861 26.2422 7.4194 26.98 10.3847H25.78C23.7557 10.3549 21.7729 10.9599 20.11 12.1147C20.014 12.1842 19.9138 12.2477 19.81 12.3047H19.67C19.5662 12.2477 19.466 12.1842 19.37 12.1147C17.6924 10.9866 15.7166 10.3841 13.695 10.3841C11.6734 10.3841 9.6976 10.9866 8.02 12.1147C7.924 12.1842 7.8238 12.2477 7.72 12.3047H7.58C7.4762 12.2477 7.376 12.1842 7.28 12.1147C5.6171 10.9599 3.6343 10.3549 1.61 10.3847H0.41ZM23.62 16.6547C24.236 16.175 24.9995 15.924 25.78 15.9447H27.39V12.7347H25.78C24.4052 12.7181 23.0619 13.146 21.95 13.9547C21.3243 14.416 20.5674 14.6649 19.79 14.6649C19.0126 14.6649 18.2557 14.416 17.63 13.9547C16.4899 13.1611 15.1341 12.7356 13.745 12.7356C12.3559 12.7356 11.0001 13.1611 9.86 13.9547C9.2343 14.416 8.4774 14.6649 7.7 14.6649C6.9226 14.6649 6.1657 14.416 5.54 13.9547C4.4144 13.1356 3.0518 12.7072 1.66 12.7347H0V15.9447H1.61C2.39051 15.924 3.154 16.175 3.77 16.6547C4.908 17.4489 6.2623 17.8747 7.65 17.8747C9.0377 17.8747 10.392 17.4489 11.53 16.6547C12.1468 16.1765 12.9097 15.9257 13.69 15.9447C14.4708 15.9223 15.2348 16.1735 15.85 16.6547C16.9901 17.4484 18.3459 17.8738 19.735 17.8738C21.1241 17.8738 22.4799 17.4484 23.62 16.6547ZM23.62 22.3947C24.236 21.915 24.9995 21.664 25.78 21.6847H27.39V18.4747H25.78C24.4052 18.4581 23.0619 18.886 21.95 19.6947C21.3243 20.156 20.5674 20.4049 19.79 20.4049C19.0126 20.4049 18.2557 20.156 17.63 19.6947C16.4899 18.9011 15.1341 18.4757 13.745 18.4757C12.3559 18.4757 11.0001 18.9011 9.86 19.6947C9.2343 20.156 8.4774 20.4049 7.7 20.4049C6.9226 20.4049 6.1657 20.156 5.54 19.6947C4.4144 18.8757 3.0518 18.4472 1.66 18.4747H0V21.6847H1.61C2.39051 21.664 3.154 21.915 3.77 22.3947C4.908 23.1889 6.2623 23.6147 7.65 23.6147C9.0377 23.6147 10.392 23.1889 11.53 22.3947C12.1468 21.9165 12.9097 21.6657 13.69 21.6847C14.4708 21.6623 15.2348 21.9135 15.85 22.3947C16.9901 23.1884 18.3459 23.6138 19.735 23.6138C21.1241 23.6138 22.4799 23.1884 23.62 22.3947Z"
-                    fill="currentColor"
+                    fill="rgb(34 197 94)"
                   />
                 </svg>
               </div>
@@ -504,9 +510,9 @@ export default function Home() {
               <div className="mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
                 <div className="col-span-2">
                   <div>
-                    <h2 className="text-2xl font-bold text-gray-900">Get the latest news!</h2>
+                    <h2 className="text-2xl font-bold">Get the latest news!</h2>
 
-                    <p className="mt-4 text-gray-500">
+                    <p className="mt-4">
                     Our Vision is to become the most respected company in the field of IT Services and Solutions in years to come through our service of High-Quality Solutions to our clients and help them grow, while creating an atmosphere within and around the organization where anyone associated with us must feel proud and happy.
                     </p>
                   </div>
@@ -523,11 +529,11 @@ export default function Home() {
                         type="email"
                         id="UserEmail"
                         placeholder="john@rhcp.com"
-                        className="w-full border-none focus:border-transparent focus:ring-transparent sm:text-sm"
+                        className="w-full border-none focus:border-transparent focus:ring-transparent sm:text-smtext-dark p-2"
                       />
 
                       <button
-                        className="mt-1 w-full bg-teal-500 px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-none hover:bg-teal-600 sm:mt-0 sm:w-auto sm:shrink-0"
+                        className="mt-1 w-full bg-green-500 px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-none hover:bg-green-600 sm:mt-0 sm:w-auto sm:shrink-0"
                       >
                         Sign Up
                       </button>
@@ -536,99 +542,99 @@ export default function Home() {
                 </div>
 
                 <div className="col-span-2 sm:col-span-1">
-                  <p className="font-medium text-gray-900">Services</p>
+                  <p className="font-medium ">Services</p>
 
                   <ul className="mt-6 space-y-4 text-sm">
                     <li>
-                      <a href="#" className="text-gray-700 transition hover:opacity-75"> 1on1 Coaching </a>
+                      <a href="#" className=" transition hover:opacity-75"> 1on1 Coaching </a>
                     </li>
 
                     <li>
-                      <a href="#" className="text-gray-700 transition hover:opacity-75"> Company Review </a>
+                      <a href="#" className=" transition hover:opacity-75"> Company Review </a>
                     </li>
 
                     <li>
-                      <a href="#" className="text-gray-700 transition hover:opacity-75"> Accounts Review </a>
+                      <a href="#" className=" transition hover:opacity-75"> Accounts Review </a>
                     </li>
 
                     <li>
-                      <a href="#" className="text-gray-700 transition hover:opacity-75"> HR Consulting </a>
+                      <a href="#" className=" transition hover:opacity-75"> HR Consulting </a>
                     </li>
 
                     <li>
-                      <a href="#" className="text-gray-700 transition hover:opacity-75"> SEO Optimisation </a>
+                      <a href="#" className=" transition hover:opacity-75"> SEO Optimisation </a>
                     </li>
                   </ul>
                 </div>
 
                 <div className="col-span-2 sm:col-span-1">
-                  <p className="font-medium text-gray-900">Company</p>
+                  <p className="font-medium ">Company</p>
 
                   <ul className="mt-6 space-y-4 text-sm">
                     <li>
-                      <a href="#" className="text-gray-700 transition hover:opacity-75"> About </a>
+                      <a href="#" className=" transition hover:opacity-75"> About </a>
                     </li>
 
                     <li>
-                      <a href="#" className="text-gray-700 transition hover:opacity-75"> Meet the Team </a>
+                      <a href="#" className=" transition hover:opacity-75"> Meet the Team </a>
                     </li>
 
                     <li>
-                      <a href="#" className="text-gray-700 transition hover:opacity-75"> Accounts Review </a>
+                      <a href="#" className=" transition hover:opacity-75"> Accounts Review </a>
                     </li>
                   </ul>
                 </div>
 
                 <div className="col-span-2 sm:col-span-1">
-                  <p className="font-medium text-gray-900">Helpful Links</p>
+                  <p className="font-medium">Helpful Links</p>
 
                   <ul className="mt-6 space-y-4 text-sm">
                     <li>
-                      <a href="#" className="text-gray-700 transition hover:opacity-75"> Contact </a>
+                      <a href="#" className=" transition hover:opacity-75"> Contact </a>
                     </li>
 
                     <li>
-                      <a href="#" className="text-gray-700 transition hover:opacity-75"> FAQs </a>
+                      <a href="#" className=" transition hover:opacity-75"> FAQs </a>
                     </li>
 
                     <li>
-                      <a href="#" className="text-gray-700 transition hover:opacity-75"> Live Chat </a>
+                      <a href="#" className=" transition hover:opacity-75"> Live Chat </a>
                     </li>
                   </ul>
                 </div>
 
                 <div className="col-span-2 sm:col-span-1">
-                  <p className="font-medium text-gray-900">Legal</p>
+                  <p className="font-medium ">Legal</p>
 
                   <ul className="mt-6 space-y-4 text-sm">
                     <li>
-                      <a href="#" className="text-gray-700 transition hover:opacity-75"> Accessibility </a>
+                      <a href="#" className=" transition hover:opacity-75"> Accessibility </a>
                     </li>
 
                     <li>
-                      <a href="#" className="text-gray-700 transition hover:opacity-75"> Returns Policy </a>
+                      <a href="#" className=" transition hover:opacity-75"> Returns Policy </a>
                     </li>
 
                     <li>
-                      <a href="#" className="text-gray-700 transition hover:opacity-75"> Refund Policy </a>
+                      <a href="#" className=" transition hover:opacity-75"> Refund Policy </a>
                     </li>
 
                     <li>
-                      <a href="#" className="text-gray-700 transition hover:opacity-75"> Hiring Statistics </a>
+                      <a href="#" className=" transition hover:opacity-75"> Hiring Statistics </a>
                     </li>
                   </ul>
                 </div>
 
                 <div className="col-span-2 sm:col-span-1">
-                  <p className="font-medium text-gray-900">Downloads</p>
+                  <p className="font-medium ">Downloads</p>
 
                   <ul className="mt-6 space-y-4 text-sm">
                     <li>
-                      <a href="#" className="text-gray-700 transition hover:opacity-75"> Marketing Calendar </a>
+                      <a href="#" className=" transition hover:opacity-75"> Marketing Calendar </a>
                     </li>
 
                     <li>
-                      <a href="#" className="text-gray-700 transition hover:opacity-75"> SEO Infographics </a>
+                      <a href="#" className=" transition hover:opacity-75"> SEO Infographics </a>
                     </li>
                   </ul>
                 </div>
@@ -639,7 +645,7 @@ export default function Home() {
                       href="#"
                       rel="noreferrer"
                       target="_blank"
-                      className="text-gray-700 transition hover:opacity-75"
+                      className=" transition hover:opacity-75"
                     >
                       <span className="sr-only">Facebook</span>
 
@@ -658,7 +664,7 @@ export default function Home() {
                       href="#"
                       rel="noreferrer"
                       target="_blank"
-                      className="text-gray-700 transition hover:opacity-75"
+                      className=" transition hover:opacity-75"
                     >
                       <span className="sr-only">Instagram</span>
 
@@ -677,7 +683,7 @@ export default function Home() {
                       href="#"
                       rel="noreferrer"
                       target="_blank"
-                      className="text-gray-700 transition hover:opacity-75"
+                      className=" transition hover:opacity-75"
                     >
                       <span className="sr-only">Twitter</span>
 
@@ -694,7 +700,7 @@ export default function Home() {
                       href="#"
                       rel="noreferrer"
                       target="_blank"
-                      className="text-gray-700 transition hover:opacity-75"
+                      className=" transition hover:opacity-75"
                     >
                       <span className="sr-only">GitHub</span>
 
@@ -713,7 +719,7 @@ export default function Home() {
                       href="#"
                       rel="noreferrer"
                       target="_blank"
-                      className="text-gray-700 transition hover:opacity-75"
+                      className=" transition hover:opacity-75"
                     >
                       <span className="sr-only">Dribbble</span>
 

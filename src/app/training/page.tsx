@@ -4,27 +4,27 @@ import RootLayout from "../layout"
 const process = () => {
     let cardContent = [
         {
-            "title" : "Enrollment",
-            "content" :"Welcome to our course enrollment page! We're excited that you're interested in joining our program. Whether you're looking to expand your skills, advance your career, or pursue a new passion, we have a course that's right for you.",
-            "buttonName" : "Enroll Now"
+            "title" : "Profile Building",
+            "content" :"Certainly! Building a strong profile as an IT professional is essential for showcasing your expertise, experience, and skills in the technology industry",
+            "buttonName" : "Explore"
         },
         {
-            "title" : "Shortlisting",
-            "content" :`All applications will undergo an initial screening process to assess qualifications, experience, and suitability for the role. Our hiring team will carefully review each application to identify candidates who meet our criteria for shortlisting.
+            "title" : "Learning",
+            "content" :`Our courses are carefully crafted by industry experts to cover the latest technologies, tools, and best practices in the IT field. From programming languages and software development frameworks to cybersecurity and cloud computing, our curriculum is designed to address the most in-demand skills sought by employers.
             `,
             "buttonName" : "Explore"
         },
         {
-            "title" : "Interview",
-            "content" :`Shortlisted candidates will be invited to participate in further assessments or interviews to evaluate their skills, competencies, and fit for the role. After thorough evaluation and consideration, we will select the most qualified candidate for the training process.
+            "title" : "Mock Interview",
+            "content" :`Invest in your professional development and elevate your interview skills with our Mock Interview Program for IT professionals. Whether you're preparing for your first job interview, transitioning to a new role, or aiming for a career advancement, our program provides the resources, support, and guidance you need to excel.
             `,
             "buttonName" : "Explore"  
         },
         {
-            "title" : "Fee Submission",
-            "content" :`Kindly submit your fee by after interview. Payment options include online payment or bank transfer. Late payments may incur additional charges.
+            "title" : "Live Projects",
+            "content" :`Elevate your IT career to new heights with our Live Project Program, where theory meets practice and classroom learning translates into real-world impact. Gain valuable experience, expand your skill set, and make meaningful contributions to businesses and organizations through hands-on projects that challenge and inspire.
             `,
-            "buttonName" : "Payment"  
+            "buttonName" : "Explore"  
         }
 
     ];
