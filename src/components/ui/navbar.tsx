@@ -142,7 +142,7 @@ export default function Navbar() {
                                     </Link>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem >
-                                    <Link href="/docs" legacyBehavior passHref>
+                                    <Link href="/review" legacyBehavior passHref>
                                         <NavigationMenuLink className="block select-none text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                                             Review
                                         </NavigationMenuLink>
