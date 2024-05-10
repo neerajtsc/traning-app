@@ -21,10 +21,13 @@ import {
   CarouselPrevious,
 } from "../components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
-import Link from 'next/link'
+import Link from 'next/link';
+import { useRouter } from "next/navigation"
+
 
 export default function Home() {
   const [text, setText] = useState('');
+  const router = useRouter();
   const [animationFinished, setAnimationFinished] = useState(false);
   const fullText = "Become the software engineer that companies love to hire ...";
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -55,9 +58,8 @@ export default function Home() {
 
   const handleClick = () => {
     debugger
-    console.log("dsfsiu");
+    router.push('/course');
   }
-
   
   return (
     <>
@@ -71,13 +73,14 @@ export default function Home() {
               {!animationFinished && <span className="typing-cursor">_</span>} 
               </div>
             <p className="col-start-1 row-start-3 mt-4 text-2xl text-slate-700 text-white xl:max-w-[50.5rem]">Welcome to India’s most Innovative Institute of IT Training.</p>
-            <div className="col-start-1 row-start-4 mt-20 mb-8 flex bg- flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0 cursor-pointer" onClick={() => handleClick()}>
+            {/* <div className="col-start-1 row-start-4 mt-20 mb-8 flex bg- flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0 cursor-pointer">
               <Link className="inline-flex justify-center bg-white rounded-lg text-lg p-5 font-bold py-3 px-4 bg-slate-900 text-white hover:bg-slate-700" href="/course">
                 <span className="text-black">
                   Explore <span aria-hidden="true" className="hidden text-slate-400 sm:inline">→</span>
                 </span>
               </Link>
-            </div>
+            </div> */}
+            <button className="btn bg-white text-black w-32 px-2 py-3 font-bold rounded" onClick={handleClick}>Explore</button>
             <div className=" col-start-1 row-start-5 flex md:row-span-3 md:row-start-3 lg:row-span-4 lg:row-start-2 xl:row-span-5 xl:row-start-1 xl:justify-end">
               <div className="w-2/5 -ml-[32rem] mt-12 h-[46.375rem] origin-top scale-[calc(204/299)] select-none sm:-ml-[24rem] sm:-mt-20 sm:h-auto sm:transform-none md:-ml-64 md:mt-10 lg:-ml-16 lg:mt-0 xl:-mr-4 xl:ml-0">
                 {/* <div className="flex justify-end">
@@ -409,6 +412,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+    
       {/* <div className="p-14 ">
         <p className=" my-4 text-center text-2xl font-bold text-slate-700">
           Welcome Aboard

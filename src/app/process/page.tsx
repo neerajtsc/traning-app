@@ -69,15 +69,20 @@ return (
 {
     cardContent?.map((item, index) => (
         <>
-            <div className="counter mt-40 text-white">{index+1}</div>
-            <div className={`${(index%2==0) ? `glassBackground rounded p-4 flex flex-col justify-between leading-normal p-6 mt-40 me-40` :`glassBackground rounded p-4 flex flex-col justify-between leading-normal p-6 mt-40 ms-40`}`}>
-                <div className="mb-8">
+            <div className={`${index==0 ? `mt-32`:`mt-10`} counter text-white`}>{index+1}</div>
+            <div className={`${(index%2==0) ? `glassBackground rounded flex flex-col justify-between leading-normal p-6 mt-10 me-40` :`glassBackground rounded flex flex-col justify-between leading-normal p-6 mt-10 ms-40`}`}>
+                <div className="flex">
+                    <div className="flex items-center" style={{width: "33.33%"}}>
+                        <img src="/images/chilling.jpg" style={{width: "1000px", height: "233px"}}/>
+                    </div>
+                    <div className="flex flex-col ps-6 col-md-8" style={{width: "66.66%"}}>
                     <div className="text-white font-bold text-6xl mb-2"><span>{item?.title}</span></div>
                     <p className=" text-base text-wrap text-xl text-white py-5">{item?.content}</p>
-                    </div>
                 <div className="flex items-center">
                     <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">{item?.buttonName}
                     </button>
+                </div>
+                    </div>
                 </div>
         </div>
         </>
