@@ -69,6 +69,7 @@
   @layer base {
     * {
       @apply border-border;
+      font-family: 'Raleway', sans-serif !important;
     }
     body {
       background-color: black;
