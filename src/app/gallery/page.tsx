@@ -1,8 +1,8 @@
-"use client";
+"use client"
 import React, { useEffect, useState } from "react";
 import RootLayout from "../layout";
 import "../../../styles/gallery.css";
-const gallery = () => {
+const Gallery = () => {
   const [text, setText] = useState('');
   const fullText = "CULTURE";
   const [animationFinished, setAnimationFinished] = useState(false);
@@ -136,4 +136,4 @@ const gallery = () => {
   );
 };
 
-export default gallery;
+export default Gallery;

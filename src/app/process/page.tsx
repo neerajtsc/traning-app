@@ -1,7 +1,7 @@
 "use client"
 import { useEffect, useState } from "react";
 import RootLayout from "../layout"
-const process = () => {
+const Process = () => {
     let cardContent = [
         {
             "title" : "Enrollment",
@@ -94,4 +94,4 @@ return (
     </RootLayout>
 )
 }
-export default process;
+export default Process;

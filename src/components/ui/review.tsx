@@ -11,7 +11,7 @@ import {
 import { useState } from "react";
 import "../../../styles/review.css";
 
-const review = () => {
+const Review = () => {
     const carouselItems = [{
         id: 1,
         src:'/images/studyOne.jpg',
@@ -148,4 +148,4 @@ const review = () => {
     )
 }
 
-export default review;
+export default Review;
