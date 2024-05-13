@@ -7,7 +7,7 @@ const course = () => {
   return (
     <RootLayout>
       <div className="pt-40">
-        <div className="pt-14">
+        <div className="pt-14" style={{padding: "0 53px"}}>
       <Review/>
       </div>
       </div>

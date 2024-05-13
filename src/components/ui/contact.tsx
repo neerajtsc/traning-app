@@ -2,13 +2,13 @@ import "../../../styles/contact.css"
 const contact = () => {
     return (
         <>
-         <div className="mt-32">
-        <div className="w-11/12 m-auto ps-16 pe-16 pt-5 flex">
+        <div className="">
+        <div className="">
           <div>
-            <div className="contactUsHeading">
+            {/* <div className="contactUsHeading">
                 <h1 className="">Why head into the battlefield unprepared?</h1>
                 <p className="w-4/5 mt-2">We work with ideas that inspire, engage and excite. Ideas that challenge convention and shape the trends. Through our awe-inspiring personal touch, we aim to make users fall in love with your brand.</p>
-            </div>
+            </div> */}
             <div className="mt-14 flex">
               <div className="contactUs p-4">
                 <div>

@@ -634,7 +634,17 @@ let trainingContent = [
         <Review/>
       </div>
       <div>
-        <Contact/>
+       <div className="mt-32">
+        <div className="w-11/12 m-auto ps-16 pe-16 pt-5 flex">
+          <div>
+            <div className="">
+                <p className="text-center text-6xl font-bold">Why head into the battlefield unprepared?</p>
+                <p className="px-40 mt-2 text-center">We work with ideas that inspire, engage and excite. Ideas that challenge convention and shape the trends. Through our awe-inspiring personal touch, we aim to make users fall in love with your brand.</p>
+            </div>
+      <Contact/>
+      </div>
+      </div>
+    </div>
       </div>
       <div>
         <FaqComponent/>

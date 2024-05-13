@@ -12,7 +12,7 @@ import {
     NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
-import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const components: { title: string; href: string; description: string }[] = [
     {
@@ -50,9 +50,13 @@ const components: { title: string; href: string; description: string }[] = [
         description:
             "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
     },
-]
+];
 
 export default function Navbar() {
+    const router = useRouter();
+    const handleEnroll = () => {
+        router.push('/contact');
+    }
     return (
         <nav className="fixed inset-x-0 top-0 p-5 z-50 dark:bg-gray-950 from-indigo-100 to-blue-200 via-purple-100 bg-black" >
             <div className="container px-4 md:px-6">
@@ -180,13 +184,15 @@ export default function Navbar() {
                         </NavigationMenu>
                     </nav>
                     <div>
-                        <a className="group inline-block px-6 py-3 text-sm no-underline uppercase text-center text-white tracking-wider font-medium md:font-semibold rounded-full bg-green-500 transition-all duration-200 ease-out hover:text-white hover:no-underline undefined" role="button" href="https://sso.teachable.com/secure/146684/identity/sign_up">
+                        {/* <a className="group inline-block px-6 py-3 text-sm no-underline uppercase text-center text-white tracking-wider font-medium md:font-semibold rounded-full bg-green-500 transition-all duration-200 ease-out hover:text-white hover:no-underline undefined" role="button">
                             Enroll now
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="w-6 h-4 inline-block transition-all duration-200 ease-out ">
                                 <path fillRule="evenodd" d="M12.97 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06l6.22-6.22H3a.75.75 0 010-1.5h16.19l-6.22-6.22a.75.75 0 010-1.06z" clip-rule="evenodd">
                                 </path>
                             </svg>
                         </a>
+                         */}
+                         <button className="btn px-9 py-3 font-bold bg-green-500 text-white rounded-full" onClick={handleEnroll}>Enroll Now</button>
                     </div>
                 </div>
             </div>
