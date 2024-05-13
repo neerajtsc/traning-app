@@ -137,7 +137,7 @@ import {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-7">
-            <AccordionTrigger className="font-bold text-xl">Module: 8 Basic React JS</AccordionTrigger>
+            <AccordionTrigger className="font-bold text-xl">Module: 7 Basic React JS</AccordionTrigger>
             <AccordionContent>
               <ul className="list-disc">
                 <li>
@@ -153,7 +153,7 @@ import {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-8">
-            <AccordionTrigger className="font-bold text-xl">Module: 9 Live Project</AccordionTrigger>
+            <AccordionTrigger className="font-bold text-xl">Module: 8 Live Project</AccordionTrigger>
             <AccordionContent>
               <ul className="list-disc">
                 <li>
