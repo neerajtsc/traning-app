@@ -9,6 +9,7 @@ import { PhoneInput } from "../components/ui/phone";
 import { useState, useEffect } from 'react';
 import Contact from "../components/ui/contact";
 import FaqComponent from "./faqComponent";
+import Review from "../components/ui/review"
 import {
   Accordion,
   AccordionContent,
@@ -25,7 +26,7 @@ import {
 import Autoplay from "embla-carousel-autoplay"
 import Link from 'next/link';
 import { useRouter } from "next/navigation"
-
+import Course from "./courseComponent"
 
 export default function Home() {
   const [text, setText] = useState('');
@@ -385,6 +386,9 @@ let trainingContent = [
 
         </Accordion>
       </div> */}
+      <div>
+        <Course/>
+      </div>
       <div className="p-14 pb-0">
         <p className="my-8 text-center text-6xl font-bold text-slate-700 text-white">
           We're working on
@@ -559,11 +563,11 @@ let trainingContent = [
         </Carousel>
 
       </div> */}
-      <div className="p-14 ">
-        <p className=" my-4 text-center text-4xl font-boldtext-white">
+      <div className="px-14 ">
+      <p className="my-8 text-center text-6xl font-bold text-slate-700 text-white">
           Reviews
         </p>
-        <Carousel className="w-full">
+        {/* <Carousel className="w-full">
           <CarouselContent className="-ml-1">
             {Array.from({ length: 7 }).map((_, index) => (
               <CarouselItem key={index} className="pl-1 ">
@@ -613,8 +617,8 @@ let trainingContent = [
           </CarouselContent>
           <CarouselPrevious />
           <CarouselNext />
-        </Carousel>
-
+        </Carousel> */}
+        <Review/>
       </div>
       <div>
         <Contact/>

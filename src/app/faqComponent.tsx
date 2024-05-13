@@ -26,7 +26,7 @@ import {
   }, []);
     return (
         <>
-         <div className="px-16 mt-40">
+         <div className="px-16">
         <p className={`my-14 text-center text-6xl font-bold ${isVisible ? 'heading' : ''}`} id="course-heading">Frequently Asked Question's</p>
         <Accordion type="single" collapsible className="w-ful rounded p-4">
           <AccordionItem value="item-1">
