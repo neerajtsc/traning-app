@@ -1,0 +1,18 @@
+.blogTitle{
+    font-size: 66px;
+}
+.contentTitle{
+    font-size: 28px;
+    font-weight: 700;
+}
+.blogCard{
+    border-radius: 13px;
+    width: 26rem;;
+}
+.blogImage{
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+} 
+.cardMargin{
+    margin-left: 10.4rem;
+}
