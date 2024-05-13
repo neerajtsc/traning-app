@@ -1,8 +1,13 @@
 "use client";
-import React from "react";
+import React, {useState } from "react";
 import RootLayout from "../layout";
 import "../../../styles/contact.css";
 const contact = () => {
+  const [formValues, setFormValues] = useState({
+    studentName: "",
+    studentEmail: "",
+    studentPhone: "",
+  });
   return (
     <RootLayout>
       <div className="mt-32">
@@ -15,13 +20,13 @@ const contact = () => {
             <div className="mt-14 flex">
               <div className="contactUs p-4">
                 <div>
-                    <input type="text" placeholder="Name" className="contactInput"></input>
+                    <input type="text" placeholder="Name" value={formValues?.studentName} className="contactInput" name="studentName"></input>
                 </div>
                 <div>
-                    <input type="text" placeholder="Email" className="contactInput"></input>
+                    <input type="text" placeholder="Email" value={formValues?.studentEmail} className="contactInput" name="studentEmail"></input>
                 </div>
                 <div>
-                <input type="number" placeholder="Phone" className="contactInput"></input>
+                <input type="number" placeholder="Phone" value={formValues?.studentPhone} className="contactInput" name="studentPhone"></input>
                 </div>
               </div>
               <div className="yourQuery p-4">
