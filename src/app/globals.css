@@ -69,6 +69,9 @@
   @layer base {
     * {
       @apply border-border;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       font-family: 'Raleway', sans-serif !important;
     }
     body {
@@ -78,6 +81,10 @@
     }
     
   }
+
+/* *{
+  font-family: 'Raleway', sans-serif !important;
+} */
 
 .compiler_bg{
   background: linear-gradient(176.71deg, rgba(173, 206, 255, 0) 4.21%, rgba(173, 206, 255, 0.24) 95.79%), #F0F5FF !important;
