@@ -7,6 +7,8 @@ import { Button } from "../components/ui/button"
 import { CardContent, Card } from "../components/ui/card"
 import { PhoneInput } from "../components/ui/phone";
 import { useState, useEffect } from 'react';
+import Contact from "../components/ui/contact";
+import FaqComponent from "./faqComponent";
 import {
   Accordion,
   AccordionContent,
@@ -31,6 +33,58 @@ export default function Home() {
   const [animationFinished, setAnimationFinished] = useState(false);
   const fullText = "Become the software engineer that companies love to hire ...";
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  let processContent = [
+    {
+        "title" : "Enrollment",
+        "content" :"Welcome to our course enrollment page! We're excited that you're interested in joining our program. Whether you're looking to expand your skills, advance your career, or pursue a new passion, we have a course that's right for you.",
+        "buttonName" : "Enroll Now"
+    },
+    {
+        "title" : "Shortlisting",
+        "content" :`All applications will undergo an initial screening process to assess qualifications, experience, and suitability for the role. Our hiring team will carefully review each application to identify candidates who meet our criteria for shortlisting.
+        `,
+        "buttonName" : "Explore"
+    },
+    {
+        "title" : "Interview",
+        "content" :`Shortlisted candidates will be invited to participate in further assessments or interviews to evaluate their skills, competencies, and fit for the role. After thorough evaluation and consideration, we will select the most qualified candidate for the training process.
+        `,
+        "buttonName" : "Explore"  
+    },
+    {
+        "title" : "Fee Submission",
+        "content" :`Kindly submit your fee by after interview. Payment options include online payment or bank transfer. Late payments may incur additional charges.
+        `,
+        "buttonName" : "Payment"  
+    }
+
+];
+let trainingContent = [
+  {
+      "title" : "Profile Building",
+      "content" :"Certainly! Building a strong profile as an IT professional is essential for showcasing your expertise, experience, and skills in the technology industry",
+      "buttonName" : "Explore"
+  },
+  {
+      "title" : "Learning",
+      "content" :`Our courses are carefully crafted by industry experts to cover the latest technologies, tools. From programming languages and software development frameworks to cybersecurity and cloud computing, our curriculum is designed to address the most in-demand skills sought by employers.
+      `,
+      "buttonName" : "Explore"
+  },
+  {
+      "title" : "Mock Interview",
+      "content" :`Invest in your professional development and elevate your interview skills with our Mock Interview Program for IT professionals. Transitioning to a new role, our program provides the resources, support, and guidance you need to excel.
+      `,
+      "buttonName" : "Explore"  
+  },
+  {
+      "title" : "Live Projects",
+      "content" :`Elevate your IT career to new heights with our Live Project Program, where theory meets practice. Gain valuable experience, expand your skill set, and make meaningful contributions to businesses and organizations through hands-on projects that challenge and inspire.
+      `,
+      "buttonName" : "Explore"  
+  }
+
+];
   useEffect(() => {
     let currentIndex = 0;
     const interval = setInterval(() => {
@@ -57,14 +111,21 @@ export default function Home() {
   }, []);
 
   const handleClick = () => {
-    debugger
     router.push('/course');
+  }
+
+  const handleProcess = () => {
+    router.push('/process')
+  }
+
+  const handleTraining = () => {
+    router.push('/training')
   }
   
   return (
     <>
       <main className="flex">
-        <div className="relative -mt-[5.75rem] overflow-hidden pb-16 pt-[5.75rem] w-full">
+        <div className="relative -mt-[5.75rem] overflow-hidden pt-[5.75rem] w-full">
           {/* <img src="/images/beams-home@95.jpg" alt="" className="absolute -top-[1rem] left-1/2 -ml-[40rem] w-[163.125rem] max-w-none sm:-ml-[67.5rem]" /> */}
           <div className="relative mx-auto mt-16 grid contentContainer max-w-container grid-cols-1 px-4 sm:mt-20 sm:px-6 lg:px-8 xl:mt-32">
             <div className="col-start-1 row-start-1 h-7 text-base font-bold leading-7 text-sky-500" aria-hidden="true"></div>
@@ -324,7 +385,7 @@ export default function Home() {
 
         </Accordion>
       </div> */}
-      <div className="p-14">
+      <div className="p-14 pb-0">
         <p className="my-8 text-center text-6xl font-bold text-slate-700 text-white">
           We're working on
         </p>
@@ -412,7 +473,64 @@ export default function Home() {
           </div>
         </div>
       </div>
-    
+     {/* Process */}
+     <div className="py-6">
+     <p className="my-8 text-center text-6xl font-bold text-slate-700 text-white">
+          How you can join us?
+        </p>
+     </div>
+      <div className="flex justify-center">
+<div className="px-28 ps-36 flex justify-between">
+  { processContent?.map((item, index) => (
+    <>
+     <div className="p-6 bg-dark text-white rounded-lg shadow-2xl" style={{width: "24%", backgroundColor: "#0d0d0d"}}>
+    <a href="#">
+        <h5 className="mb-2 text-3xl font-bold tracking-tight">{item?.title}</h5>
+    </a>
+    <p className="mb-3 py-4 h-56">{item?.content}</p>
+    <button className="btn bg-green-500 text-white py-2 px-4 rounded font-bold" onClick={handleProcess}>Explore</button>
+</div>
+    </>
+  ))
+ 
+}
+</div>
+</div>
+
+      {/* Process */}
+
+      {/* Training */}
+
+      <div className="py-6">
+        <p className="my-8 text-center text-6xl font-bold text-slate-700 text-white">
+          Our Highly Rated
+        </p>
+        <p className="my-8 text-center text-6xl font-bold text-slate-700 text-white">
+          Outcome Based Training Programme
+        </p>
+     </div>
+      <div className="flex justify-center">
+<div className="px-28 ps-36 flex justify-between">
+  { trainingContent?.map((item, index) => (
+    <>
+     <div className="p-6 bg-dark text-white rounded-lg shadow-2xl" style={{width: "24%", backgroundColor: "#0d0d0d"}}>
+    <a href="#">
+        <h5 className="mb-2 text-3xl font-bold tracking-tight">{item?.title}</h5>
+    </a>
+    <p className="mb-3 py-4 h-56">{item?.content}</p>
+    <button className="btn bg-green-500 text-white py-2 px-4 rounded font-bold" onClick={handleTraining}>Explore</button>
+</div>
+    </>
+  ))
+ 
+}
+</div>
+</div>
+
+      {/* Training */}
+      
+
+
       {/* <div className="p-14 ">
         <p className=" my-4 text-center text-2xl font-bold text-slate-700">
           Welcome Aboard
@@ -498,6 +616,14 @@ export default function Home() {
         </Carousel>
 
       </div>
+      <div>
+        <Contact/>
+      </div>
+      <div>
+        <FaqComponent/>
+      </div>
+
+      
       <div className="">
         <footer className="bg-dark text-white">
           <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
