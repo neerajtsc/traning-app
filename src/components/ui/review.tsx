@@ -10,6 +10,7 @@ import {
   import Autoplay from "embla-carousel-autoplay"
 import { useState } from "react";
 import "../../../styles/review.css";
+import Image from "next/image";
 
 const Review = () => {
     const carouselItems = [{
@@ -94,7 +95,7 @@ const Review = () => {
                             <Card className="customCards">
                               <CardContent className="p-0 flex flex-col text-white items-center justify-center object-cover">
                                <div className="p-5 flex justify-center w-full">
-                                     <img className="reviewerProfile" src={item_.src}></img>
+                                     <Image className="reviewerProfile" src={item_.src} alt="reviewer" width={95} height={95}/>
                                </div>
                                <div className="reviewerCard p-5">
                                 <p>{item_.desc}</p>

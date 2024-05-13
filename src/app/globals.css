@@ -199,8 +199,8 @@
 
 .studyImage {
   position: absolute;
-  width: 95%;
-  height: 94%;
+  /* width: 95%;
+  height: 94%; */
   opacity: 0;
 }
 

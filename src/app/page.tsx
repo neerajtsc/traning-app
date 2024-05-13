@@ -9,7 +9,8 @@ import { PhoneInput } from "../components/ui/phone";
 import { useState, useEffect } from 'react';
 import Contact from "../components/ui/contact";
 import FaqComponent from "./faqComponent";
-import Review from "../components/ui/review"
+import Review from "../components/ui/review";
+import Image from "next/image"
 import {
   Accordion,
   AccordionContent,
@@ -219,21 +220,33 @@ let trainingContent = [
                   </div>
                 </div> */}
                 <div className="p-3 relative overflow-hidden mt-12 studyImageContainer rounded-xl">
-                <img
+                <Image
                   src="/images/studyOne.jpg"
                   className={`studyImage rounded-xl ${currentImageIndex === 0 ? "animate" : ""}`}
+                  alt="studyOne"
+                  width={528}
+                  height={384}
                 />
-                <img
+                <Image
                   src="/images/studyTwo.jpg"
                   className={`studyImage rounded-xl ${currentImageIndex === 1 ? "animate" : ""}`}
+                  alt="studyTwo"
+                  width={528}
+                  height={384}
                 />
-                <img
+                <Image
                   src="/images/studyThree.jpg"
                   className={`studyImage rounded-xl ${currentImageIndex === 2 ? "animate" : ""}`}
+                  alt="studyThree"
+                  width={528}
+                  height={384}
                 />
-                <img
+                <Image
                   src="/images/studyFour.jpg"
                   className={`studyImage rounded-xl ${currentImageIndex === 3 ? "animate" : ""}`}
+                  alt="studyFour"
+                  width={528}
+                  height={384}
                 />
                 </div>
               </div>
@@ -391,7 +404,7 @@ let trainingContent = [
       </div>
       <div className="p-14 pb-0">
         <p className="my-8 text-center text-6xl font-bold text-slate-700 text-white">
-          We`&apos;`re working on
+          We&apos;re working on
         </p>
         <p className="my-8 text-center text-6xl font-bold text-slate-700 text-white">
           some cool technologies
