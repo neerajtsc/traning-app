@@ -165,7 +165,7 @@ export default function Navbar() {
                                 <NavigationMenuItem>
                                     <Link href="/faq" legacyBehavior passHref>
                                         <NavigationMenuLink className="block text-xl select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                                            FAQ's
+                                            FAQ&apos;s
                                         </NavigationMenuLink>
                                     </Link>
                                 </NavigationMenuItem>
@@ -187,10 +187,10 @@ export default function Navbar() {
                         </NavigationMenu>
                     </nav>
                     <div>
-                        <a className="group inline-block px-6 py-3 text-sm no-underline uppercase text-center text-white tracking-wider font-medium md:font-semibold rounded-full bg-gradient-to-r from-green-600 to-yellow-400  transition-all duration-200 ease-out hover:text-white hover:no-underline undefined" role="button" href="https://sso.teachable.com/secure/146684/identity/sign_up">
+                        <a className="group inline-block px-6 py-3 text-sm no-underline uppercase text-center text-white tracking-wider font-medium md:font-semibold rounded-full bg-green-500 transition-all duration-200 ease-out hover:text-white hover:no-underline undefined" role="button" href="https://sso.teachable.com/secure/146684/identity/sign_up">
                             Enroll now
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="w-6 h-4 inline-block transition-all duration-200 ease-out ">
-                                <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06l6.22-6.22H3a.75.75 0 010-1.5h16.19l-6.22-6.22a.75.75 0 010-1.06z" clip-rule="evenodd">
+                                <path fillRule="evenodd" d="M12.97 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06l6.22-6.22H3a.75.75 0 010-1.5h16.19l-6.22-6.22a.75.75 0 010-1.06z" clip-rule="evenodd">
                                 </path>
                             </svg>
                         </a>

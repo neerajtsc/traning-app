@@ -1,7 +1,8 @@
 "use client"
 import { useEffect, useState } from "react";
 import RootLayout from "../layout"
-const process = () => {
+import Image from "next/image";
+const Process = () => {
     let cardContent = [
         {
             "title" : "Enrollment",
@@ -73,7 +74,7 @@ return (
             <div className={`${(index%2==0) ? `glassBackground rounded flex flex-col justify-between leading-normal p-6 mt-10 me-40` :`glassBackground rounded flex flex-col justify-between leading-normal p-6 mt-10 ms-40`}`}>
                 <div className="flex">
                     <div className="flex items-center" style={{width: "33.33%"}}>
-                        <img src="/images/chilling.jpg" style={{width: "1000px", height: "233px"}}/>
+                        <Image src="/images/chilling.jpg" alt="chilling" width={1000} height={233}/>
                     </div>
                     <div className="flex flex-col ps-6 col-md-8" style={{width: "66.66%"}}>
                     <div className="text-white font-bold text-6xl mb-2"><span>{item?.title}</span></div>
@@ -94,4 +95,4 @@ return (
     </RootLayout>
 )
 }
-export default process;
+export default Process;

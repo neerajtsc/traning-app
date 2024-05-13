@@ -6,10 +6,9 @@ const course = () => {
     return (
         
         <RootLayout>
+          <div className='pt-9'>
           <CourseComponent/>
-          {/* <div>
-            course page
-          </div> */}
+          </div>
       </RootLayout>
     )
 }

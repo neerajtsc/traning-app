@@ -1,8 +1,9 @@
-"use client";
+"use client"
 import React, { useEffect, useState } from "react";
 import RootLayout from "../layout";
 import "../../../styles/gallery.css";
-const gallery = () => {
+import Image from "next/image";
+const Gallery = () => {
   const [text, setText] = useState('');
   const fullText = "CULTURE";
   const [animationFinished, setAnimationFinished] = useState(false);
@@ -108,15 +109,15 @@ const gallery = () => {
       <div className="flex flex-col">
         <div className="mt-14 flex justify-center">
         <div className="w-1/5">
-          <img src="/images/handShake.jpg"/>
+          <Image src="/images/handShake.jpg" alt="handShake" width={1000} height={233}/>
         </div>
         <div className="w-1/4 ms-40">
-          <img src="/images/chilling.jpg"/>
+          <Image src="/images/chilling.jpg" alt="chilling" width={1000} height={233}/>
         </div>
         </div>
         <div className="flex justify-evenly">
           <div className="w-1/6">
-            <img src ="/images/meeting.jpg"/>
+            <Image src ="/images/meeting.jpg" alt="meeting" width={1000} height={233}/>
           </div>
           <div className="w-1/5 flex items-end flex-col justify-between">
             <div>
@@ -124,11 +125,11 @@ const gallery = () => {
             <div className="text-slate-500 italic text-end">-Building erudites of tommorrow</div>
             </div>
             <div>
-            <img src="/images/team.jpg"/>
+            <Image src="/images/team.jpg" alt="team" width={1000} height={233}/>
             </div>
           </div>
           <div className="w-1/4 pt-6">
-            <img src="/images/work.jpg"/>
+            <Image src="/images/work.jpg" alt="work" width={1000} height={233}/>
           </div>
         </div>
       </div>
@@ -136,4 +137,4 @@ const gallery = () => {
   );
 };
 
-export default gallery;
+export default Gallery;
