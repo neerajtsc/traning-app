@@ -69,13 +69,263 @@
   @layer base {
     * {
       @apply border-border;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Raleway', sans-serif !important;
     }
     body {
-      @apply bg-background text-foreground;
+      background-color: black;
+      color: white;
+      overflow-x: hidden;
     }
+    
   }
+
+/* *{
+  font-family: 'Raleway', sans-serif !important;
+} */
 
 .compiler_bg{
   background: linear-gradient(176.71deg, rgba(173, 206, 255, 0) 4.21%, rgba(173, 206, 255, 0.24) 95.79%), #F0F5FF !important;
 }  
+.contentContainer{
+  width: 88%;
+  margin: auto;
+}
 
+.glassBackground {
+  /* border-radius: 40px; */
+  background-image: linear-gradient(357deg,rgb(57, 54, 54), #0e0d0d 100%);
+  width: 80em;
+  padding: 45px;
+  /* z-index: 999; */
+  /* padding: 10px 0; */
+}
+
+.thread {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px; /* adjust width according to your design */
+  height: 100%;
+  background-color: rgb(34 197 94); /* adjust color according to your design */
+  z-index: -1;
+  transition: opacity 10s ease; /* adjust duration and easing as needed */
+  /* Additional styling for the thread */
+}
+
+.containerLast {
+  width:100vw;
+  height:10rem;
+  z-index: 999;
+  background-color: #000;
+}
+
+.counter {
+  background-image: linear-gradient(357deg,grey, #0e0d0d 100%);
+  width: 70px;
+  height: 70px;
+  border-radius:45px;
+  font-size: 41px;
+  padding-left: 23px;
+  padding-top: 3px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.path {
+  position: fixed;
+  top: 0;
+  left: 49.99%;
+  height: 100%;
+  /* background-color: #fff; */
+  z-index: -999;
+  border: 1px solid #fff;
+  border-style: dashed;
+}
+
+.imageCard {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.textSection {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title3{
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0px 0 28px;
+}
+
+.description{
+    font-size: 16px;
+    opacity: 0.8;
+    max-width: 80%;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+}
+
+.typing-animation {
+  font-size: 24px; /* Adjust font size */
+  border-right: 2px solid transparent; /* Create a border that will simulate typing */
+  padding-right: 5px; /* Add padding for cursor */
+  display: inline-block;
+}
+
+.typing-cursor {
+  animation: blink-caret 0.50s step-end infinite; /* Blinking cursor animation */
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black; /* Color of the cursor */
+  }
+}
+
+.studyImageContainer{
+  /* box-shadow: -3px 2px 16px whitesmoke; */
+      height: 24rem;
+    width: 33rem;
+}
+
+.studyImage {
+  position: absolute;
+  /* width: 95%;
+  height: 94%; */
+  opacity: 0;
+}
+
+.animate {
+  animation: imageAnimation 8s infinite;
+}
+
+@keyframes imageAnimation {
+  0% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  25% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  75% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+
+.ourWorkingTech{
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ourWorkingTech div{
+padding: 50px;
+background-color: #0d0d0d;
+border: none;
+}
+
+/* styles.css */
+
+@keyframes dropAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.heading {
+  opacity: 0;
+  animation: dropAnimation 0.5s ease-in-out forwards;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glassIco {
+  --width: 200px;
+  &, & * {
+    box-sizing: border-box;
+    transition: 5000s; /* Adjust transition times as needed */
+  }
+  width: var(--width);
+  height: var(--width);
+  color: #fff;
+  font-size: 30px;
+  border-radius: 5px;
+
+  /* Glass-like background with subtle reflections and blur */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px) grayscale(0.1); /* Adjust blur and grayscale intensity */
+
+  /* Optional: Inner shadow for depth */
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-right-color: rgba(255, 255, 255, 0.1);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+
+  text-decoration: none;
+  /* margin: 20px; */
+  overflow: hidden;
+  @include flex-center;
+
+  /* Pseudo-element for "gloss" effect */
+  &:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%; /* Expands to cover entire element */
+    height: 100%;
+    filter: blur(2px);
+    transition: 3000ms;
+    transform: skewX(0deg) translateX(0); /* No initial skew or translation */
+  }
+
+  &:hover {
+    transform: translateY(-20px);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.0)); /* Creates horizontal gradient for shine */
+    &:before {
+      transform: skewX(45deg) translateX(calc(var(--width) * -1 - 50%)); /* Maintain skew on hover */
+      background: linear-gradient(to right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.0)); /* Creates horizontal gradient for shine */
+    }
+  }
+
+  /* Text or content within the element */
+  & > * {
+    opacity: 0.8;
+  }
+}
+
+.fixedWidth{
+  width: 88%;
+  margin: auto;
+}

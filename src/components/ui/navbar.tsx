@@ -12,7 +12,7 @@ import {
     NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
-import Image from "next/image";
+import { useRouter, usePathname } from "next/navigation";
 
 const components: { title: string; href: string; description: string }[] = [
     {
@@ -50,21 +50,28 @@ const components: { title: string; href: string; description: string }[] = [
         description:
             "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
     },
-]
+];
 
 export default function Navbar() {
+    const router = useRouter();
+    const pathname = usePathname();
+    console.log('pathname', pathname)
+    console.log("router==>", router)
+    const handleEnroll = () => {
+        router.push('/contact');
+    }
     return (
-        <nav className="fixed inset-x-0 top-0 z-50  shadow dark:bg-gray-950 bg-gradient-to-r from-indigo-100 to-blue-200 via-purple-100" >
+        <nav className="fixed inset-x-0 top-0 p-5 z-50 dark:bg-gray-950 from-indigo-100 to-blue-200 via-purple-100 bg-black" >
             <div className="container px-4 md:px-6">
                 <div className="flex h-14 justify-between items-center">
-                    <Link className="flex items-center gap-2 text-lg font-semibold" href="/">
+                    {/* <Link className="flex items-center gap-2 text-lg font-semibold" href="/">
                         <Image src="/images/tsc.png" width={150} height={100} alt="" className="" />
-                    </Link>
+                    </Link> */}
                     <nav className=" flex items-center space-x-4">
                         <NavigationMenu>
                             <NavigationMenuList>
-                                <NavigationMenuItem>
-                                    <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+                                {/* <NavigationMenuItem>
+                                    <NavigationMenuTrigger className="text-xl">Getting started</NavigationMenuTrigger>
                                     <NavigationMenuContent>
                                         <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                                             <li className="row-span-3">
@@ -98,7 +105,7 @@ export default function Navbar() {
                                     </NavigationMenuContent>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
-                                    <NavigationMenuTrigger>Curriculum</NavigationMenuTrigger>
+                                    <NavigationMenuTrigger className="text-xl">Curriculum</NavigationMenuTrigger>
                                     <NavigationMenuContent>
                                         <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                                             {components.map((component) => (
@@ -112,25 +119,67 @@ export default function Navbar() {
                                             ))}
                                         </ul>
                                     </NavigationMenuContent>
+                                </NavigationMenuItem> */}
+                                <NavigationMenuItem>
+                                    <Link href="/" legacyBehavior passHref>
+                                        <NavigationMenuLink className={`${pathname === "/" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}>
+                                            Home
+                                        </NavigationMenuLink>
+                                    </Link>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
-                                    <Link href="/docs" legacyBehavior passHref>
-                                        <NavigationMenuLink className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                                            IT Corporate Training
+                                    <Link href="/course" legacyBehavior passHref>
+                                        <NavigationMenuLink className={`${pathname === "/course" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}>
+                                            Courses
+                                        </NavigationMenuLink>
+                                    </Link>
+                                </NavigationMenuItem>
+                                <NavigationMenuItem>
+                                    <Link href="/process" legacyBehavior passHref>
+                                        <NavigationMenuLink className={`${pathname === "/process" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}>
+                                            Process
+                                        </NavigationMenuLink>
+                                    </Link>
+                                </NavigationMenuItem>
+                                <NavigationMenuItem>
+                                    <Link href="/training" legacyBehavior passHref>
+                                        <NavigationMenuLink className={`${pathname === "/training" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}>
+                                            Training
                                         </NavigationMenuLink>
                                     </Link>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem >
-                                    <Link href="/docs" legacyBehavior passHref>
-                                        <NavigationMenuLink className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                                    <Link href="/review" legacyBehavior passHref>
+                                        <NavigationMenuLink className={`${pathname === "/review" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}>
                                             Review
                                         </NavigationMenuLink>
                                     </Link>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
-                                    <Link href="/docs" legacyBehavior passHref>
-                                        <NavigationMenuLink className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                                            Contract
+                                    <Link href="/gallery" legacyBehavior passHref>
+                                        <NavigationMenuLink className={`${pathname === "/gallery" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}>
+                                            Gallery
+                                        </NavigationMenuLink>
+                                    </Link>
+                                </NavigationMenuItem>
+                                <NavigationMenuItem>
+                                    <Link href="/contact" legacyBehavior passHref>
+                                        <NavigationMenuLink className={`${pathname === "/contact" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}>
+                                            Contact
+                                        </NavigationMenuLink>
+                                    </Link>
+                                </NavigationMenuItem>
+                                <NavigationMenuItem>
+                                    <Link href="/faq" legacyBehavior passHref>
+                                        <NavigationMenuLink className={`${pathname === "/faq" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}>
+                                            FAQ&apos;s
+                                        </NavigationMenuLink>
+                                    </Link>
+                                </NavigationMenuItem>
+                                <NavigationMenuItem>
+                                    <Link href="/blog" legacyBehavior passHref>
+                                        <NavigationMenuLink className={`${pathname === "/blog" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}>
+                                            Blog
                                         </NavigationMenuLink>
                                     </Link>
                                 </NavigationMenuItem>
@@ -145,13 +194,15 @@ export default function Navbar() {
                         </NavigationMenu>
                     </nav>
                     <div>
-                        <a className="group inline-block px-6 py-3 text-sm no-underline uppercase text-center text-white tracking-wider font-medium md:font-semibold rounded-full bg-gradient-to-r from-green-600 to-yellow-400  transition-all duration-200 ease-out hover:text-white hover:no-underline undefined" role="button" href="https://sso.teachable.com/secure/146684/identity/sign_up">
+                        {/* <a className="group inline-block px-6 py-3 text-sm no-underline uppercase text-center text-white tracking-wider font-medium md:font-semibold rounded-full bg-green-500 transition-all duration-200 ease-out hover:text-white hover:no-underline undefined" role="button">
                             Enroll now
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="w-6 h-4 inline-block transition-all duration-200 ease-out ">
-                                <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06l6.22-6.22H3a.75.75 0 010-1.5h16.19l-6.22-6.22a.75.75 0 010-1.06z" clip-rule="evenodd">
+                                <path fillRule="evenodd" d="M12.97 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06l6.22-6.22H3a.75.75 0 010-1.5h16.19l-6.22-6.22a.75.75 0 010-1.06z" clip-rule="evenodd">
                                 </path>
                             </svg>
                         </a>
+                         */}
+                         <button className="btn px-9 py-3 font-bold bg-green-500 text-white rounded-full" onClick={handleEnroll}>Enroll Now</button>
                     </div>
                 </div>
             </div>
