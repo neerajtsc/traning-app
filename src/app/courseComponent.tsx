@@ -26,7 +26,8 @@ import {
   }, []);
     return (
         <>
-         <div className="px-16">
+         <div className="">
+          <div className="fixedWidth">
         <p className={`my-14 text-center text-6xl font-bold ${isVisible ? 'heading' : ''}`} id="course-heading">Web Design Course Curriculum</p>
         <Accordion type="single" collapsible className="w-ful rounded p-4">
           <AccordionItem value="item-1">
@@ -170,7 +171,8 @@ import {
           </AccordionItem>
 
         </Accordion>
- </div>
+         </div>
+         </div>
         </>
     )
 }

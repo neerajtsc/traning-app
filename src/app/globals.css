@@ -91,6 +91,7 @@
 }  
 .contentContainer{
   width: 88%;
+  margin: auto;
 }
 
 .glassBackground {
@@ -233,6 +234,10 @@
 
 .ourWorkingTech{
   width: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .ourWorkingTech div{
@@ -289,7 +294,7 @@ border: none;
   border-bottom-color: rgba(255, 255, 255, 0.1);
 
   text-decoration: none;
-  margin: 20px;
+  /* margin: 20px; */
   overflow: hidden;
   @include flex-center;
 
@@ -318,4 +323,9 @@ border: none;
   & > * {
     opacity: 0.8;
   }
+}
+
+.fixedWidth{
+  width: 88%;
+  margin: auto;
 }

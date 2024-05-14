@@ -63,7 +63,7 @@ return (
                 <p className="w-4/5 mt-2">We work with ideas that inspire, engage and excite. Ideas that challenge convention and shape the trends. Through our awe-inspiring personal touch, we aim to make users fall in love with your brand.</p>
             </div> */}
             <div className="mt-14 flex">
-              <div className="contactUs p-4">
+              <div className="contactUs">
                 <div>
                   <input
                     type="text"
@@ -98,7 +98,7 @@ return (
                   <span style={{ color: formErrors?.studentPhone ? 'red' : 'inherit' }}>{formErrors?.studentPhone}</span>
                 </div>
               </div>
-              <div className="yourQuery p-4">
+              <div className="yourQuery">
                 <textarea className="contactTextBox" placeholder="Enter your Query" name="studentQuery"  onChange={(e) => handleChange(e)} ></textarea>
               </div>
             </div>

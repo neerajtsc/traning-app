@@ -34,13 +34,19 @@
 }
 
 .profileContainer{
-    display: flex;
-    justify-content: center;
+    padding: 30px 0px;
 }
 
 .reviewerCard{
     height: 200px;
+    display: flex;
+    justify-content: center;
 }
+
+.reviewerCard p{
+width: 90%;
+}
+
 
 .customCards {
     border: none !important;
