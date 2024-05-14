@@ -88,7 +88,7 @@ return (
                 </div>
                 <div>
                   <input
-                    type="number"
+                    type="text"
                     placeholder="Phone"
                     className="contactInput"
                     name="studentPhone"
