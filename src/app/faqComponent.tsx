@@ -26,9 +26,9 @@ import {
   }, []);
     return (
         <>
-         <div className="px-16">
+         <div className="">
         <p className={`my-14 text-center text-6xl font-bold ${isVisible ? 'heading' : ''}`} id="course-heading">Frequently Asked Question&apos;s</p>
-        <Accordion type="single" collapsible className="w-ful rounded p-4">
+        <Accordion type="single" collapsible className="fixedWidth rounded">
           <AccordionItem value="item-1">
             <AccordionTrigger className="font-bold text-xl">Module: 1  What is the duration of the IT training program?</AccordionTrigger>
             <AccordionContent>

@@ -80,7 +80,7 @@ const Review = () => {
     return (
         <>
         <div className="">
-        <div className="flex sliderContent m-auto">
+        <div className="flex">
           <div className="">
                   <Carousel className="w-full "
                     plugins={[
@@ -94,10 +94,10 @@ const Review = () => {
                           <div className="p-1">
                             <Card className="customCards">
                               <CardContent className="p-0 flex flex-col text-white items-center justify-center object-cover">
-                               <div className="p-5 flex justify-center w-full">
+                               <div className="flex justify-center w-full profileContainer">
                                      <Image className="reviewerProfile" src={item_.src} alt="reviewer" width={95} height={95}/>
                                </div>
-                               <div className="reviewerCard p-5">
+                               <div className="reviewerCard">
                                 <p>{item_.desc}</p>
                                </div>
                               </CardContent>
@@ -109,40 +109,7 @@ const Review = () => {
                     <CarouselPrevious />
                     <CarouselNext />
                   </Carousel>
-
                 </div>
-          {/* <div className="custom-carousel flex w-full">
-            <div className="actionBtn">
-              <div className="actionPerformed">
-                <button onClick={handlePrev}>
-                  <img src="/images/prev.png" alt="Previous"></img>
-                </button>
-              </div>
-            </div>
-            <div className="carousel-item actionCard flex">
-              {carouselItems
-                .slice(startIndex, startIndex + 3)
-                .map((item) => (
-                  <div key={item.id} className="slidingCard">
-                    <div className="profileContainer">
-                      <img
-                        className="reviewerProfile"
-                        src={item.src}
-                        alt={`Item ${item.id}`}
-                      ></img>
-                    </div>
-                    <p className="mt-5">{item.desc}</p>
-                  </div>
-                ))}
-            </div>
-            <div className="actionBtn">
-              <div className="actionPerformed">
-                <button onClick={handleNext}>
-                  <img src="/images/next.png" alt="Next"></img>
-                </button>
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
         </>

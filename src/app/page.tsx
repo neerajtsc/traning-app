@@ -129,7 +129,7 @@ let trainingContent = [
       <main className="flex">
         <div className="relative -mt-[5.75rem] overflow-hidden pt-[5.75rem] w-full">
           {/* <img src="/images/beams-home@95.jpg" alt="" className="absolute -top-[1rem] left-1/2 -ml-[40rem] w-[163.125rem] max-w-none sm:-ml-[67.5rem]" /> */}
-          <div className="relative mx-auto mt-16 grid contentContainer max-w-container grid-cols-1 px-4 sm:mt-20 sm:px-6 lg:px-8 xl:mt-32">
+          <div className="relative mx-auto mt-16 grid contentContainer max-w-container grid-cols-1 sm:mt-20">
             <div className="col-start-1 row-start-1 h-7 text-base font-bold leading-7 text-sky-500" aria-hidden="true"></div>
             <div className="h-64 typing-animation col-start-1 row-start-2 mt-7 max-w-[36rem] text-5xl sm:leading-tight font-extrabold tracking-tight text-slate-900 sm:text-6xl text-white xl:max-w-[50.5rem]">
               {text}
@@ -402,15 +402,15 @@ let trainingContent = [
       <div>
         <Course/>
       </div>
-      <div className="p-14 pb-0">
+      <div className="fixedWidth pb-0">
         <p className="my-8 text-center text-6xl font-bold text-slate-700 text-white">
           We&apos;re working on
         </p>
         <p className="my-8 text-center text-6xl font-bold text-slate-700 text-white">
           some cool technologies
         </p>
-        <div className="flex justify-center">
-          <div className="flex gap-4 mt-4 w-11/12 justify-between">
+        <div className="flex">
+          <div className="flex gap-4 mt-4 w-full justify-between">
             <div className="ourWorkingTech">
               <div className="glassIco flex justify-center items-center p-5 rounded-xl bg-opacity-60 backdrop-filter backdrop-blur-lg transform scale-100 hover:scale-110 ">
                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
@@ -491,33 +491,37 @@ let trainingContent = [
         </div>
       </div>
      {/* Process */}
-     <div className="py-6">
-     <p className="my-8 text-center text-6xl font-bold text-slate-700 text-white">
+
+    <div className="fixedWidth">
+    <div className="py-6">
+        <p className="my-8 text-center text-6xl font-bold text-slate-700 text-white">
           How you can join us?
         </p>
-     </div>
-      <div className="flex justify-center">
-<div className="px-28 ps-36 flex justify-between">
-  { processContent?.map((item, index) => (
-    <>
-     <div className="p-6 bg-dark text-white rounded-lg shadow-2xl" style={{width: "24%", backgroundColor: "#0d0d0d"}}>
-    <a href="#">
-        <h5 className="mb-2 text-3xl font-bold tracking-tight">{item?.title}</h5>
-    </a>
-    <p className="mb-3 py-4 h-56">{item?.content}</p>
-    <button className="btn bg-green-500 text-white py-2 px-4 rounded font-bold" onClick={handleProcess}>Explore</button>
-</div>
-    </>
-  ))
- 
-}
-</div>
-</div>
+      </div>
+      <div className="flex">
+        <div className="flex justify-between">
+          { processContent?.map((item, index) => (
+            <>
+            <div className="p-6 bg-dark text-white rounded-lg shadow-2xl" style={{width: "24%", backgroundColor: "#0d0d0d"}}>
+            <a href="#">
+                <h5 className="mb-2 text-3xl font-bold tracking-tight">{item?.title}</h5>
+            </a>
+            <p className="mb-3 py-4 h-56">{item?.content}</p>
+            <button className="btn bg-green-500 text-white py-2 px-4 rounded font-bold" onClick={handleProcess}>Explore</button>
+        </div>
+            </>
+          ))
+        
+        }
+        </div>
+      </div>
+    </div>
 
       {/* Process */}
 
       {/* Training */}
 
+      <div className="fixedWidth">
       <div className="py-6">
         <p className="my-8 text-center text-6xl font-bold text-slate-700 text-white">
           Our Highly Rated
@@ -525,24 +529,25 @@ let trainingContent = [
         <p className="my-8 text-center text-6xl font-bold text-slate-700 text-white">
           Outcome Based Training Programme
         </p>
-     </div>
-      <div className="flex justify-center">
-<div className="px-28 ps-36 flex justify-between">
-  { trainingContent?.map((item, index) => (
-    <>
-     <div className="p-6 bg-dark text-white rounded-lg shadow-2xl" style={{width: "24%", backgroundColor: "#0d0d0d"}}>
-    <a href="#">
-        <h5 className="mb-2 text-3xl font-bold tracking-tight">{item?.title}</h5>
-    </a>
-    <p className="mb-3 py-4 h-56">{item?.content}</p>
-    <button className="btn bg-green-500 text-white py-2 px-4 rounded font-bold" onClick={handleTraining}>Explore</button>
-</div>
-    </>
-  ))
- 
-}
-</div>
-</div>
+      </div>
+      <div className="flex">
+      <div className="flex justify-between">
+        { trainingContent?.map((item, index) => (
+          <>
+          <div className="p-6 bg-dark text-white rounded-lg shadow-2xl" style={{width: "24%", backgroundColor: "#0d0d0d"}}>
+          <a href="#">
+              <h5 className="mb-2 text-3xl font-bold tracking-tight">{item?.title}</h5>
+          </a>
+          <p className="mb-3 py-4 h-56">{item?.content}</p>
+          <button className="btn bg-green-500 text-white py-2 px-4 rounded font-bold" onClick={handleTraining}>Explore</button>
+      </div>
+          </>
+        ))
+      
+      }
+      </div>
+      </div>
+      </div>
 
       {/* Training */}
       
@@ -576,7 +581,7 @@ let trainingContent = [
         </Carousel>
 
       </div> */}
-      <div className="px-14 ">
+      <div className="fixedWidth">
       <p className="my-8 text-center text-6xl font-bold text-slate-700 text-white">
           Reviews
         </p>
@@ -635,7 +640,7 @@ let trainingContent = [
       </div>
       <div>
        <div className="mt-32">
-        <div className="w-11/12 m-auto ps-16 pe-16 pt-5 flex">
+        <div className="fixedWidth flex">
           <div>
             <div className="">
                 <p className="text-center text-6xl font-bold">Why head into the battlefield unprepared?</p>
