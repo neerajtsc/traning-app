@@ -1,7 +1,7 @@
 import "../../../styles/blog.css";
 import React, { useState } from "react";
 import Image from "next/image";
-const blog = () => {
+const Blog = () => {
     const cardData = [
         {
             title:"HTML, CSS",
@@ -55,8 +55,8 @@ const blog = () => {
         <div className="w-11/12 m-auto ps-16 pe-16 pt-5">
             <h1 className="blogTitle">Boost up your skills with us</h1>
             <div className="flex justify-between flex-wrap mb-5">
-            {cardData?.map((item)=>
-                <div className="border blogCard mt-7">
+            {cardData?.map((item, index)=>
+                <div className="border blogCard mt-7" key={index}>
                 <div className="">
                     <Image className="blogImage" alt={`${item?.title}`} src={`${item?.src}`} width={420} height={100}/>
                 </div>
@@ -75,4 +75,4 @@ const blog = () => {
   );
 };
 
-export default blog;
+export default Blog;
