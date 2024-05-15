@@ -1,6 +1,6 @@
 import "../../../styles/contact.css";
 import React, { ChangeEvent, useState } from "react";
-const contact = () => {
+const Contact = () => {
     // Define a generic type for the event target
 type TargetElement = HTMLInputElement | HTMLTextAreaElement;
 
@@ -88,7 +88,7 @@ return (
                 </div>
                 <div>
                   <input
-                    type="number"
+                    type="text"
                     placeholder="Phone"
                     className="contactInput"
                     name="studentPhone"
@@ -115,4 +115,4 @@ return (
   );
 };
 
-export default contact;
+export default Contact;

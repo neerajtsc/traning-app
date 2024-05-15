@@ -10,7 +10,8 @@ import { useState, useEffect } from 'react';
 import Contact from "../components/ui/contact";
 import FaqComponent from "./faqComponent";
 import Review from "../components/ui/review";
-import Image from "next/image"
+import Image from "next/image";
+import Ceo from "../components/ui/ceo"
 import {
   Accordion,
   AccordionContent,
@@ -399,6 +400,9 @@ let trainingContent = [
 
         </Accordion>
       </div> */}
+      <div>
+        <Ceo/>
+      </div>
       <div>
         <Course/>
       </div>

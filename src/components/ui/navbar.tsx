@@ -12,7 +12,7 @@ import {
     NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 const components: { title: string; href: string; description: string }[] = [
     {
@@ -54,6 +54,9 @@ const components: { title: string; href: string; description: string }[] = [
 
 export default function Navbar() {
     const router = useRouter();
+    const pathname = usePathname();
+    console.log('pathname', pathname)
+    console.log("router==>", router)
     const handleEnroll = () => {
         router.push('/contact');
     }
@@ -119,63 +122,63 @@ export default function Navbar() {
                                 </NavigationMenuItem> */}
                                 <NavigationMenuItem>
                                     <Link href="/" legacyBehavior passHref>
-                                        <NavigationMenuLink className="block text-xl select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                                        <NavigationMenuLink className={`${pathname === "/" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}>
                                             Home
                                         </NavigationMenuLink>
                                     </Link>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
                                     <Link href="/course" legacyBehavior passHref>
-                                        <NavigationMenuLink className="block text-xl select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                                        <NavigationMenuLink className={`${pathname === "/course" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}>
                                             Courses
                                         </NavigationMenuLink>
                                     </Link>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
                                     <Link href="/process" legacyBehavior passHref>
-                                        <NavigationMenuLink className="block text-xl select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                                        <NavigationMenuLink className={`${pathname === "/process" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}>
                                             Process
                                         </NavigationMenuLink>
                                     </Link>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
                                     <Link href="/training" legacyBehavior passHref>
-                                        <NavigationMenuLink className="block text-xl select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                                        <NavigationMenuLink className={`${pathname === "/training" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}>
                                             Training
                                         </NavigationMenuLink>
                                     </Link>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem >
                                     <Link href="/review" legacyBehavior passHref>
-                                        <NavigationMenuLink className="block select-none text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                                        <NavigationMenuLink className={`${pathname === "/review" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}>
                                             Review
                                         </NavigationMenuLink>
                                     </Link>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
                                     <Link href="/gallery" legacyBehavior passHref>
-                                        <NavigationMenuLink className="block text-xl select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                                        <NavigationMenuLink className={`${pathname === "/gallery" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}>
                                             Gallery
                                         </NavigationMenuLink>
                                     </Link>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
                                     <Link href="/contact" legacyBehavior passHref>
-                                        <NavigationMenuLink className="block text-xl select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                                        <NavigationMenuLink className={`${pathname === "/contact" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}>
                                             Contact
                                         </NavigationMenuLink>
                                     </Link>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
                                     <Link href="/faq" legacyBehavior passHref>
-                                        <NavigationMenuLink className="block text-xl select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                                        <NavigationMenuLink className={`${pathname === "/faq" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}>
                                             FAQ&apos;s
                                         </NavigationMenuLink>
                                     </Link>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
                                     <Link href="/blog" legacyBehavior passHref>
-                                        <NavigationMenuLink className="block text-xl select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                                        <NavigationMenuLink className={`${pathname === "/blog" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}>
                                             Blog
                                         </NavigationMenuLink>
                                     </Link>
