@@ -1,0 +1,14 @@
+.placementContent{
+    width: 446px;
+}
+.placementContent :hover {
+    transform: scale(1.2, 1.2);
+}
+
+.placedStudentsCard{
+    width: 23%;
+}
+
+.studentName{
+    font-size: 22px;
+}
