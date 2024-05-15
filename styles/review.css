@@ -34,11 +34,11 @@
 }
 
 .profileContainer{
-    padding: 30px 0px;
+    padding: 10px 0px;
 }
 
 .reviewerCard{
-    height: 200px;
+    height: 172px;
     display: flex;
     justify-content: center;
 }
@@ -56,4 +56,9 @@ width: 90%;
 .slideIt:hover{
     scale: 1.2;
     transition: ease-out 0.5s
+}
+
+.videoContent{
+    width: 32.6%;
+    background-color: #181818;
 }
