@@ -127,10 +127,10 @@ let trainingContent = [
   
   return (
     <>
-      <main className="flex">
+      <main className="flex scrollWatcher">
         <div className="relative -mt-[5.75rem] overflow-hidden pt-[5.75rem] w-full">
           {/* <img src="/images/beams-home@95.jpg" alt="" className="absolute -top-[1rem] left-1/2 -ml-[40rem] w-[163.125rem] max-w-none sm:-ml-[67.5rem]" /> */}
-          <div className="relative mx-auto mt-16 grid contentContainer max-w-container grid-cols-1 sm:mt-20">
+          <div className="relative mx-auto mt-16 grid contentContainer max-w-container grid-cols-1 sm:mt-20 fadeIn">
             <div className="col-start-1 row-start-1 h-7 text-base font-bold leading-7 text-sky-500" aria-hidden="true"></div>
             <div className="h-64 typing-animation col-start-1 row-start-2 mt-7 max-w-[36rem] text-5xl sm:leading-tight font-extrabold tracking-tight text-slate-900 sm:text-6xl text-white xl:max-w-[50.5rem]">
               {text}
@@ -406,7 +406,7 @@ let trainingContent = [
       <div>
         <Course/>
       </div>
-      <div className="fixedWidth pb-0">
+      <div className="fixedWidth pb-0 fadeIn">
         <p className="my-8 text-center text-6xl font-bold text-slate-700 text-white">
           We&apos;re working on
         </p>
@@ -496,7 +496,7 @@ let trainingContent = [
       </div>
      {/* Process */}
 
-    <div className="fixedWidth">
+    <div className="fixedWidth fadeIn">
     <div className="py-6">
         <p className="my-8 text-center text-6xl font-bold text-slate-700 text-white">
           How you can join us?
@@ -525,7 +525,7 @@ let trainingContent = [
 
       {/* Training */}
 
-      <div className="fixedWidth">
+      <div className="fixedWidth fadeIn">
       <div className="py-6">
         <p className="my-8 text-center text-6xl font-bold text-slate-700 text-white">
           Our Highly Rated
@@ -585,7 +585,7 @@ let trainingContent = [
         </Carousel>
 
       </div> */}
-      <div className="fixedWidth">
+      <div className="fixedWidth fadeIn">
       <p className="my-8 text-center text-6xl font-bold text-slate-700 text-white">
           Reviews
         </p>
@@ -644,7 +644,7 @@ let trainingContent = [
       </div>
       <div>
        <div className="mt-32">
-        <div className="fixedWidth flex">
+        <div className="fixedWidth flex fadeIn">
           <div>
             <div className="">
                 <p className="text-center text-6xl font-bold">Why head into the battlefield unprepared?</p>
