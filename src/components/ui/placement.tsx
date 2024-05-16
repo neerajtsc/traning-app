@@ -102,6 +102,7 @@ return (
                                 src={`${item.src}`}
                                 width={350}
                                 height={200}
+                                alt="hiring"
                                 />
                             </div>
 

@@ -33,6 +33,7 @@ import Course from "./courseComponent"
 export default function Home() {
   const [text, setText] = useState('');
   const router = useRouter();
+  const [openModal, setOpenModal] = useState(false);
   const [animationFinished, setAnimationFinished] = useState(false);
   const fullText = "Become the software engineer that companies love to hire ...";
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -88,6 +89,10 @@ let trainingContent = [
   }
 
 ];
+
+const handleModal = () => {
+  setOpenModal(true);
+}
   useEffect(() => {
     let currentIndex = 0;
     const interval = setInterval(() => {
@@ -124,13 +129,17 @@ let trainingContent = [
   const handleTraining = () => {
     router.push('/training')
   }
+
+  const closeModal = () => {
+    setOpenModal(false)
+  }
   
   return (
     <>
-      <main className="flex">
-        <div className="relative -mt-[5.75rem] overflow-hidden pt-[5.75rem] w-full">
+      <main className="flex scrollWatcher">
+        <div className="relative -mt-[5.75rem] overflow-hidden pt-[5.75rem] w-full fadeIn">
           {/* <img src="/images/beams-home@95.jpg" alt="" className="absolute -top-[1rem] left-1/2 -ml-[40rem] w-[163.125rem] max-w-none sm:-ml-[67.5rem]" /> */}
-          <div className="relative mx-auto mt-16 grid contentContainer max-w-container grid-cols-1 sm:mt-20">
+          <div className="relative mx-auto mt-16 grid contentContainer max-w-container grid-cols-1 sm:mt-20 fadeIn">
             <div className="col-start-1 row-start-1 h-7 text-base font-bold leading-7 text-sky-500" aria-hidden="true"></div>
             <div className="h-64 typing-animation col-start-1 row-start-2 mt-7 max-w-[36rem] text-5xl sm:leading-tight font-extrabold tracking-tight text-slate-900 sm:text-6xl text-white xl:max-w-[50.5rem]">
               {text}
@@ -406,7 +415,7 @@ let trainingContent = [
       <div>
         <Course/>
       </div>
-      <div className="fixedWidth pb-0">
+      <div className="fixedWidth pb-0 fadeIn">
         <p className="my-8 text-center text-6xl font-bold text-slate-700 text-white">
           We&apos;re working on
         </p>
@@ -496,7 +505,7 @@ let trainingContent = [
       </div>
      {/* Process */}
 
-    <div className="fixedWidth">
+    <div className="fixedWidth fadeIn">
     <div className="py-6">
         <p className="my-8 text-center text-6xl font-bold text-slate-700 text-white">
           How you can join us?
@@ -525,7 +534,7 @@ let trainingContent = [
 
       {/* Training */}
 
-      <div className="fixedWidth">
+      <div className="fixedWidth fadeIn">
       <div className="py-6">
         <p className="my-8 text-center text-6xl font-bold text-slate-700 text-white">
           Our Highly Rated
@@ -585,7 +594,49 @@ let trainingContent = [
         </Carousel>
 
       </div> */}
-      <div className="fixedWidth">
+      <button className="btn bg-green-500 py-2 px-4 enquiryBtn" onClick={handleModal}>Enquire Now</button>
+      {openModal && 
+      <div id="static-modal" data-modal-backdrop="static" aria-hidden="true" style={{zIndex: "999"}} className="flex overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full max-h-full h-full">
+      <div className="">
+        <form className="slim-scroll h-fit max-h-[80vh] border border-gray-6 bg-white text-black p-4 [&amp;>*]:mb-2" style={{width: "40rem"}}>
+          <div className="flex items-center justify-between whitespace-nowrap text-base font-extrabold text-green-500 text-center">
+            <div></div>
+            <div className="text-4xl">ENQUIRE NOW</div>
+            <div>
+            <button className="text-gray-500" onClick={closeModal}>X</button>
+            </div>
+            </div>
+          
+          <div className="flex flex-col gap-y-0.5 py-6">
+            <div className="undefined">
+              <input type="text" name="name" placeholder="enter full name" className="h-10 block w-full rounded-sm border border-gray-border p-3 outline-none placeholder:capitalize sm:text-sm text-black"/>
+              </div>
+              <div>
+                <div className="pt-6">
+                  <input type="email" name="email" placeholder="enter your email" className="h-10 block w-full rounded-sm border border-gray-border p-3 outline-none placeholder:capitalize sm:text-sm text-black"/>
+                  </div>
+                  </div>
+                      <div className="pt-6">
+                        <div className="flex items-start">
+                          <div>
+                            <input className="block h-10 w-14 rounded-sm border border-gray-border p-2 outline-none placeholder:capitalize md:p-3 mr-2 text-black" value="+91" placeholder="+91"/>
+                            </div>
+                            <div className="w-full">
+                              <input type="text" name="phone" id="phone" placeholder="Mobile Number" className="h-10 block w-full rounded-sm border border-gray-border p-3 outline-none placeholder:capitalize sm:text-sm text-black"/>
+                              </div>
+                              </div>
+                              <div className="w-full pt-6">
+                              <input type="text" name="reason" id="reason" placeholder="Reason of Enquiry" className="h-10 block w-full rounded-sm border border-gray-border p-3 outline-none placeholder:capitalize sm:text-sm text-black"/>
+                              </div>
+                              </div>
+                               
+                              </div>
+                              <button type="submit" className="flex w-full items-center justify-center rounded-sm bg-green-500 px-4 py-2 font-medium text-white disabled:opacity-80  mt-2 ">Continue</button>
+                              </form>
+                              </div>
+        </div>
+        }
+      <div className="fixedWidth fadeIn">
       <p className="my-8 text-center text-6xl font-bold text-slate-700 text-white">
           Reviews
         </p>
@@ -644,7 +695,7 @@ let trainingContent = [
       </div>
       <div>
        <div className="mt-32">
-        <div className="fixedWidth flex">
+        <div className="fixedWidth flex fadeIn">
           <div>
             <div className="">
                 <p className="text-center text-6xl font-bold">Why head into the battlefield unprepared?</p>
@@ -662,19 +713,19 @@ let trainingContent = [
       
       <div className="">
         <footer className="bg-dark text-white">
-          <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-            <div className="lg:flex lg:items-start lg:gap-8">
-              <div className="text-teal-600">
+          <div className="">
+            <div className="">
+              {/* <div className="text-teal-600">
                 <svg className="h-8" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M0.41 10.3847C1.14777 7.4194 2.85643 4.7861 5.2639 2.90424C7.6714 1.02234 10.6393 0 13.695 0C16.7507 0 19.7186 1.02234 22.1261 2.90424C24.5336 4.7861 26.2422 7.4194 26.98 10.3847H25.78C23.7557 10.3549 21.7729 10.9599 20.11 12.1147C20.014 12.1842 19.9138 12.2477 19.81 12.3047H19.67C19.5662 12.2477 19.466 12.1842 19.37 12.1147C17.6924 10.9866 15.7166 10.3841 13.695 10.3841C11.6734 10.3841 9.6976 10.9866 8.02 12.1147C7.924 12.1842 7.8238 12.2477 7.72 12.3047H7.58C7.4762 12.2477 7.376 12.1842 7.28 12.1147C5.6171 10.9599 3.6343 10.3549 1.61 10.3847H0.41ZM23.62 16.6547C24.236 16.175 24.9995 15.924 25.78 15.9447H27.39V12.7347H25.78C24.4052 12.7181 23.0619 13.146 21.95 13.9547C21.3243 14.416 20.5674 14.6649 19.79 14.6649C19.0126 14.6649 18.2557 14.416 17.63 13.9547C16.4899 13.1611 15.1341 12.7356 13.745 12.7356C12.3559 12.7356 11.0001 13.1611 9.86 13.9547C9.2343 14.416 8.4774 14.6649 7.7 14.6649C6.9226 14.6649 6.1657 14.416 5.54 13.9547C4.4144 13.1356 3.0518 12.7072 1.66 12.7347H0V15.9447H1.61C2.39051 15.924 3.154 16.175 3.77 16.6547C4.908 17.4489 6.2623 17.8747 7.65 17.8747C9.0377 17.8747 10.392 17.4489 11.53 16.6547C12.1468 16.1765 12.9097 15.9257 13.69 15.9447C14.4708 15.9223 15.2348 16.1735 15.85 16.6547C16.9901 17.4484 18.3459 17.8738 19.735 17.8738C21.1241 17.8738 22.4799 17.4484 23.62 16.6547ZM23.62 22.3947C24.236 21.915 24.9995 21.664 25.78 21.6847H27.39V18.4747H25.78C24.4052 18.4581 23.0619 18.886 21.95 19.6947C21.3243 20.156 20.5674 20.4049 19.79 20.4049C19.0126 20.4049 18.2557 20.156 17.63 19.6947C16.4899 18.9011 15.1341 18.4757 13.745 18.4757C12.3559 18.4757 11.0001 18.9011 9.86 19.6947C9.2343 20.156 8.4774 20.4049 7.7 20.4049C6.9226 20.4049 6.1657 20.156 5.54 19.6947C4.4144 18.8757 3.0518 18.4472 1.66 18.4747H0V21.6847H1.61C2.39051 21.664 3.154 21.915 3.77 22.3947C4.908 23.1889 6.2623 23.6147 7.65 23.6147C9.0377 23.6147 10.392 23.1889 11.53 22.3947C12.1468 21.9165 12.9097 21.6657 13.69 21.6847C14.4708 21.6623 15.2348 21.9135 15.85 22.3947C16.9901 23.1884 18.3459 23.6138 19.735 23.6138C21.1241 23.6138 22.4799 23.1884 23.62 22.3947Z"
                     fill="rgb(34 197 94)"
                   />
                 </svg>
-              </div>
+              </div> */}
 
-              <div className="mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
-                <div className="col-span-2">
+              <div className="mt-8 px-24 py-24 flex justify-between fadeIn">
+                {/* <div className="col-span-2">
                   <div>
                     <h2 className="text-2xl font-bold">Get the latest news!</h2>
 
@@ -682,9 +733,9 @@ let trainingContent = [
                     Our Vision is to become the most respected company in the field of IT Services and Solutions in years to come through our service of High-Quality Solutions to our clients and help them grow, while creating an atmosphere within and around the organization where anyone associated with us must feel proud and happy.
                     </p>
                   </div>
-                </div>
+                </div> */}
 
-                <div className="col-span-2 lg:col-span-3 lg:flex lg:items-end">
+                {/* <div className="col-span-2 lg:col-span-3 lg:flex lg:items-end">
                   <form className="w-full">
                     <label htmlFor="UserEmail" className="sr-only"> Email </label>
 
@@ -705,107 +756,101 @@ let trainingContent = [
                       </button>
                     </div>
                   </form>
+               </div> */}
+
+               <div className="">
+                <div className="text-4xl text-white font-bold">Tech <span className="underline text-green-500">Superiors</span></div>
+                <div className="flex">
+                <div>
+                <div className="pt-6">
+                  <div className="text-2xl">Contact Us</div>
+                  <div className="">marketing@techsuperiors.com</div>
+                  <div>+91 9910996928</div>
                 </div>
 
+                <div className="pt-6">
+                  <div className="text-2xl">Head Office - Gurugram</div>
+                  <div className="">813P, Sector 47, Gurgaon 122018, Haryana</div>
+                  <div>+91 9910996928</div>
+                </div>
+                </div>
+                <div className="ps-9">
+                  <div className="pt-6">
+                  <div className="text-2xl">Dehradun</div>
+                  <div className="">Chrysler Tech Centre, 21, IT Park</div>
+                  <div>Sahastradhara Road, Dehradun, Uttarakhand</div>
+                </div>
+
+                <div className="pt-6">
+                  <div className="text-2xl">Delhi</div>
+                  <div className="">A-21, Green Park Extension</div>
+                  <div>New Delhi</div>
+                </div>
+               </div>
+               </div>
+               </div>
                 <div className="col-span-2 sm:col-span-1">
-                  <p className="font-medium ">Services</p>
+                  <p className="font-bold text-xl">Company</p>
 
                   <ul className="mt-6 space-y-4 text-sm">
                     <li>
-                      <a href="#" className=" transition hover:opacity-75"> 1on1 Coaching </a>
+                      <a href="/" className=" transition hover:opacity-75" > About Us</a>
                     </li>
 
                     <li>
-                      <a href="#" className=" transition hover:opacity-75"> Company Review </a>
+                      <a href="/gallery" className=" transition hover:opacity-75"> Gallery </a>
                     </li>
 
                     <li>
-                      <a href="#" className=" transition hover:opacity-75"> Accounts Review </a>
+                      <a href="/review" className=" transition hover:opacity-75"> Review </a>
                     </li>
-
                     <li>
-                      <a href="#" className=" transition hover:opacity-75"> HR Consulting </a>
-                    </li>
-
-                    <li>
-                      <a href="#" className=" transition hover:opacity-75"> SEO Optimisation </a>
+                      <a href="/placement" className=" transition hover:opacity-75"> Placement </a>
                     </li>
                   </ul>
                 </div>
 
                 <div className="col-span-2 sm:col-span-1">
-                  <p className="font-medium ">Company</p>
+                  <p className="font-bold text-xl">Resources</p>
 
                   <ul className="mt-6 space-y-4 text-sm">
                     <li>
-                      <a href="#" className=" transition hover:opacity-75"> About </a>
+                      <a href="/blog" className=" transition hover:opacity-75"> Blog </a>
                     </li>
 
                     <li>
-                      <a href="#" className=" transition hover:opacity-75"> Meet the Team </a>
+                      <a href="/process" className=" transition hover:opacity-75"> Process </a>
                     </li>
 
                     <li>
-                      <a href="#" className=" transition hover:opacity-75"> Accounts Review </a>
+                      <a href="/training" className=" transition hover:opacity-75"> Training </a>
+                    </li>
+
+                    <li>
+                      <a href="/faq" className=" transition hover:opacity-75">FAQ&apos;s</a>
+                    </li>
+
+                    <li>
+                      <a href="/course" className=" transition hover:opacity-75">Courses</a>
                     </li>
                   </ul>
                 </div>
 
                 <div className="col-span-2 sm:col-span-1">
-                  <p className="font-medium">Helpful Links</p>
+                  <p className="font-bold text-xl">Join</p>
 
                   <ul className="mt-6 space-y-4 text-sm">
                     <li>
-                      <a href="#" className=" transition hover:opacity-75"> Contact </a>
+                      <a href="/contact" className=" transition hover:opacity-75"> Partner with Us </a>
                     </li>
 
-                    <li>
-                      <a href="#" className=" transition hover:opacity-75"> FAQs </a>
-                    </li>
-
-                    <li>
-                      <a href="#" className=" transition hover:opacity-75"> Live Chat </a>
-                    </li>
                   </ul>
                 </div>
 
-                <div className="col-span-2 sm:col-span-1">
-                  <p className="font-medium ">Legal</p>
 
-                  <ul className="mt-6 space-y-4 text-sm">
-                    <li>
-                      <a href="#" className=" transition hover:opacity-75"> Accessibility </a>
-                    </li>
-
-                    <li>
-                      <a href="#" className=" transition hover:opacity-75"> Returns Policy </a>
-                    </li>
-
-                    <li>
-                      <a href="#" className=" transition hover:opacity-75"> Refund Policy </a>
-                    </li>
-
-                    <li>
-                      <a href="#" className=" transition hover:opacity-75"> Hiring Statistics </a>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="col-span-2 sm:col-span-1">
-                  <p className="font-medium ">Downloads</p>
-
-                  <ul className="mt-6 space-y-4 text-sm">
-                    <li>
-                      <a href="#" className=" transition hover:opacity-75"> Marketing Calendar </a>
-                    </li>
-
-                    <li>
-                      <a href="#" className=" transition hover:opacity-75"> SEO Infographics </a>
-                    </li>
-                  </ul>
-                </div>
-
-                <ul className="col-span-2 flex justify-start gap-6 lg:col-span-5 lg:justify-end">
+              </div>
+            </div>
+                <ul className="col-span-2 flex justify-start gap-6 lg:col-span-5 lg:justify-center">
                   <li>
                     <a
                       href="#"
@@ -899,8 +944,6 @@ let trainingContent = [
                     </a>
                   </li>
                 </ul>
-              </div>
-            </div>
 
             <div className="mt-8 border-t border-gray-100 pt-8">
               <div className="sm:flex sm:justify-between">
