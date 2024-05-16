@@ -1,5 +1,6 @@
 import "../../../styles/contact.css";
 import React, { ChangeEvent, useState } from "react";
+import Image from "next/image";
 const Placement = () => {
     const studentData = [
         {
@@ -48,28 +49,28 @@ return (
         <>
         <div>
            <div className="mt-10">
-           <p className="text-7xl font-semibold">"Where Dreams Meet Opportunities:</p>
+           <p className="text-7xl font-semibold">&quot;Where Dreams Meet Opportunities:</p>
            <p className="text-7xl font-semibold ms-7 mt-1">Your Placement Journey</p>
-           <p className="text-7xl font-semibold ms-7 mt-1">Starts Here."</p>
+           <p className="text-7xl font-semibold ms-7 mt-1">Starts Here.&quot;</p>
            </div>
 
            <div className="flex justify-between mt-14">
               <div className="placementContent">
-                <img src="/images/placementOne.jpg" className="rounded-lg"></img>
+                <Image src="/images/placementOne.jpg" className="rounded-lg" alt="placementOne" width={200} height={200}/>
               </div>
               <div className="placementContent">
-              <img src="/images/placementThree.jpg" className="rounded-lg"></img>
+              <Image src="/images/placementThree.jpg" className="rounded-lg" alt="placementThree" width={200} height={200}/>
               </div>
               <div className="placementContent">
-              <img src="/images/placementFour.jpg" className="rounded-lg"></img>
+              <Image src="/images/placementFour.jpg" className="rounded-lg" alt="placementFour" width={200} height={200}/>
               </div>
            </div>
 
            <div className="mt-10 pt-5">
             <p className="text-6xl font-semibold">Placements</p>
            <div className="flex flex-wrap justify-between border border-red-800">
-            {studentData?.map((item)=>
-                    <div className="border border-white mt-5 mb-10 placedStudentsCard">
+            {studentData?.map((item, index)=>
+                    <div className="border border-white mt-5 mb-10 placedStudentsCard" key={index}>
                         <div className="h-48 border border-red-800"> Profile</div>
                         <div><p className="ms-5 studentName">{item?.studentName}</p></div>
                     </div>
