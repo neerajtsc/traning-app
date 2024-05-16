@@ -37,6 +37,33 @@ export default function Home() {
   const [animationFinished, setAnimationFinished] = useState(false);
   const fullText = "Become the software engineer that companies love to hire ...";
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  let uspContent = [
+    {
+        "title" : "Work Culture",
+        "content" :"Beyond mere productivity, the live office environment prioritizes the cultivation of a strong sense of community. From company-wide celebrations to team-building activities and volunteer initiatives, employees are encouraged to forge meaningful connections with their colleagues. ",
+        "buttonName" : "Enroll Now"
+    },
+    {
+        "title" : "Industrial Exposure",
+        "content" :`This experiential learning not only reinforces classroom learning but also hones critical thinking skills, problem-solving abilities, and adaptability – qualities that are essential for success in any professional field..
+        `,
+        "buttonName" : "Explore"
+    },
+    {
+        "title" : "ISO Certification",
+        "content" :`In a competitive job market, having an ISO certification can differentiate you from other candidates and position you as a highly qualified and trustworthy professional.As a first-year professional, earning an ISO certification showcases your commitment to excellence and adherence to international standards of quality and best practices.
+        `,
+        "buttonName" : "Explore"  
+    },
+    {
+        "title" : "Guarantee",
+        "content" :`
+        The placement guarantee course from Trainings is specifically designed to help freshers embark upon their professional journey with confidence. These professional courses with job placement are curated with a holistic approach aimed at transforming beginners into job-ready professionals who can grow to become domain leaders.
+        `,
+        "buttonName" : "Explore"  
+    }
+
+];
   let processContent = [
     {
         "id" : "01",
@@ -509,6 +536,31 @@ const handleModal = () => {
       </div>
      {/* Process */}
 
+     <div className="fixedWidth fadeIn">
+    <div className="py-6">
+        <p className="my-8 text-center text-6xl font-bold text-slate-700 text-white">
+          Why you join us?
+        </p>
+      </div>
+      <div className="flex">
+        <div className="flex justify-between">
+          { uspContent?.map((item, index) => (
+            <>
+            <div className="p-6 bg-dark text-white rounded-lg shadow-2xl" style={{width: "24%", backgroundColor: "#0d0d0d"}} key={index}>
+            <a href="#">
+                <h5 className="mb-2 text-3xl font-bold tracking-tight">{item?.title}</h5>
+            </a>
+            <p className="mb-3 py-4 h-60">{item?.content}</p>
+            <button className="btn bg-green-500 text-white py-2 px-4 rounded font-bold" onClick={handleProcess}>Explore</button>
+        </div>
+            </>
+          ))
+        
+        }
+        </div>
+      </div>
+    </div>
+
     <div className="fixedWidth fadeIn">
     <div className="py-6">
         <p className="my-8 text-center text-6xl font-bold text-slate-700 text-white">
@@ -605,6 +657,8 @@ const handleModal = () => {
       </div> */}
       <button className="btn bg-green-500 py-2 px-4 enquiryBtn" onClick={handleModal}>Enquire Now</button>
       {openModal && 
+      <>
+      <div className="modalBackdrop" aria-hidden="true"></div>
       <div id="static-modal" data-modal-backdrop="static" aria-hidden="true" style={{zIndex: "999"}} className="flex overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full max-h-full h-full">
       <div className="">
         <form className="slim-scroll h-fit max-h-[80vh] border border-gray-6 bg-white text-black p-4 [&amp;>*]:mb-2" style={{width: "40rem"}}>
@@ -644,6 +698,7 @@ const handleModal = () => {
                               </form>
                               </div>
         </div>
+        </>
         }
       <div className="fixedWidth fadeIn">
       <p className="my-8 text-center text-6xl font-bold text-slate-700 text-white">
@@ -798,7 +853,7 @@ const handleModal = () => {
                </div>
                </div>
                </div>
-                <div className="col-span-2 sm:col-span-1">
+                <div className="col-span-2 sm:col-span-1 pt-16">
                   <p className="font-bold text-xl">Company</p>
 
                   <ul className="mt-6 space-y-4 text-sm">
@@ -819,7 +874,7 @@ const handleModal = () => {
                   </ul>
                 </div>
 
-                <div className="col-span-2 sm:col-span-1">
+                <div className="col-span-2 sm:col-span-1 pt-16">
                   <p className="font-bold text-xl">Resources</p>
 
                   <ul className="mt-6 space-y-4 text-sm">
@@ -845,7 +900,7 @@ const handleModal = () => {
                   </ul>
                 </div>
 
-                <div className="col-span-2 sm:col-span-1">
+                <div className="col-span-2 sm:col-span-1 pt-16">
                   <p className="font-bold text-xl">Join</p>
 
                   <ul className="mt-6 space-y-4 text-sm">
