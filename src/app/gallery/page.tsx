@@ -115,7 +115,7 @@ const Gallery = () => {
           <Image src="/images/chilling.jpg" alt="chilling" width={1000} height={233}/>
         </div>
         </div>
-        <div className="flex justify-evenly">
+        <div className="mb-5 flex justify-evenly">
           <div className="w-1/6">
             <Image src ="/images/meeting.jpg" alt="meeting" width={1000} height={233}/>
           </div>
@@ -131,6 +131,28 @@ const Gallery = () => {
           <div className="w-1/4 pt-6">
             <Image src="/images/work.jpg" alt="work" width={1000} height={233}/>
           </div>
+        </div>
+        <div className="mt-5 fixedWidth">
+        <section className="1">
+        <section className="parallax">
+            <div className="parallax-inner">
+                <h1>Forests</h1>
+            </div>
+        </section>
+    <section className="parallax-1">
+        <div className="parallax-inner">
+            <h1>Beaches</h1>
+        </div>
+    </section>
+    </section>
+
+    <section className="2">
+    <section className="parallax-2">
+        <div className="parallax-inner">
+            <h1>Mountains</h1>
+        </div>
+    </section>
+    </section>
         </div>
       </div>
     </RootLayout>

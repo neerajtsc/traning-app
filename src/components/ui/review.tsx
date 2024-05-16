@@ -84,37 +84,19 @@ const Review = () => {
         <div className="">
           <div className="flex w-full justify-between flex-wrap">
             <div className="aspect-w-16 aspect-h-9 videoContent rounded-lg mb-5 p-1">
-              <iframe className="w-full rounded-lg" src="https://www.youtube.com/embed/BsDoLVMnmZs?si=mXqB0fce-HUUZ5tB" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+              <iframe className="w-full rounded-lg reviewFrame" src="https://www.youtube.com/embed/BsDoLVMnmZs?si=mXqB0fce-HUUZ5tB" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               <div className="p-2">
                Learn complete HTML from basic
               </div>
             </div>
             <div className=" w-full aspect-w-16 aspect-h-9 videoContent rounded-lg mb-5 p-1">
-              <iframe className="w-full rounded-lg" src="https://www.youtube.com/embed/BsDoLVMnmZs?si=mXqB0fce-HUUZ5tB" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+              <iframe className="w-full rounded-lg reviewFrame" src="https://www.youtube.com/embed/BsDoLVMnmZs?si=mXqB0fce-HUUZ5tB" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               <div className="p-2">
                Learn complete HTML from basic
               </div>
             </div>
             <div className=" w-full aspect-w-16 aspect-h-9 videoContent rounded-lg mb-5 p-1">
-              <iframe className="w-full rounded-lg" src="https://www.youtube.com/embed/BsDoLVMnmZs?si=mXqB0fce-HUUZ5tB" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-              <div className="p-2">
-               Learn complete HTML from basic
-              </div>
-            </div>
-            <div className=" w-full aspect-w-16 aspect-h-9 videoContent rounded-lg mb-5 p-1">
-              <iframe className="w-full rounded-lg" src="https://www.youtube.com/embed/BsDoLVMnmZs?si=mXqB0fce-HUUZ5tB" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-              <div className="p-2">
-               Learn complete HTML from basic
-              </div>
-            </div>
-            <div className=" w-full aspect-w-16 aspect-h-9 videoContent rounded-lg mb-5 p-1">
-              <iframe className="w-full rounded-lg" src="https://www.youtube.com/embed/BsDoLVMnmZs?si=mXqB0fce-HUUZ5tB" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-              <div className="p-2">
-               Learn complete HTML from basic
-              </div>
-            </div>
-            <div className=" w-full aspect-w-16 aspect-h-9 videoContent rounded-lg mb-5 p-1">
-              <iframe className="w-full rounded-lg" src="https://www.youtube.com/embed/BsDoLVMnmZs?si=mXqB0fce-HUUZ5tB" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+              <iframe className="w-full rounded-lg reviewFrame" src="https://www.youtube.com/embed/BsDoLVMnmZs?si=mXqB0fce-HUUZ5tB" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               <div className="p-2">
                Learn complete HTML from basic
               </div>

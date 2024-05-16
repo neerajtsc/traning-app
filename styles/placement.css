@@ -1,14 +1,62 @@
-.placementContent{
-    width: 446px;
+.textColor{
+ color: #21c05c;
 }
-.placementContent :hover {
-    transform: scale(1.2, 1.2);
-}
-
 .placedStudentsCard{
-    width: 23%;
+    width: 32%;
+    box-shadow: 0px 0px 6px 0px white;
 }
 
 .studentName{
     font-size: 22px;
+}
+
+.successStories{
+    background-image: url("/images/teamOp.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.analysedData{
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.analysedDataContainer{
+    background-color: rgb(255 255 255 / 0.05);
+}
+
+.ourStories{
+    color: #21c05c;
+}
+
+.studentJourney{
+    background-color: #0d0d0d;
+}
+
+.studentPic{
+    /* background-color: #21c05c; */
+}
+
+.studentName{
+    bottom: 0px;
+}
+
+.glass-card {
+    background: white;
+    background: linear-gradient(
+        to right bottom,
+        rgba(255, 255, 255, 0.4),
+        rgba(255, 255, 255, 0.2)
+    );
+    backdrop-filter: blur(1rem);
+    z-index: 1;
+    align-items: center;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+}
+
+.placedAt{
+    background-color: #21c05c;
+    color: white;
 }
