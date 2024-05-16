@@ -8,7 +8,7 @@ const placement = () => {
   return (
     <RootLayout>
     <div className="mt-32">
-       <div className="fixedWidth">
+       <div className="">
           <Placement/>
        </div>
     </div>

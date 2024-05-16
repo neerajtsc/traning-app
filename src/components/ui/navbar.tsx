@@ -165,7 +165,7 @@ export default function Navbar() {
                                 <NavigationMenuItem>
                                     <Link href="/contact" legacyBehavior passHref>
                                         <NavigationMenuLink className={`${pathname === "/contact" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}>
-                                            Contact
+                                            Partner With Us
                                         </NavigationMenuLink>
                                     </Link>
                                 </NavigationMenuItem>

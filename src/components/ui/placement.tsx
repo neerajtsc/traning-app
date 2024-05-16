@@ -1,80 +1,135 @@
 import "../../../styles/contact.css";
 import React, { ChangeEvent, useState } from "react";
+import Image from "next/image";
 const Placement = () => {
     const studentData = [
-        {
+        {   
+            src:"/images/oneStdnt.png",
             studentName: "Aarav Sharma",
-            profile: "Frontend Developer",
+            profile: "Web Developer",
             views: "The company has an excellent work culture that encourages learning and growth. I was able to enhance my skills in HTML, CSS, and JavaScript significantly.",
+            placedAt: "TSC"
         },
-        {
-            studentName: "Meera Kapoor",
-            profile: "Backend Developer",
-            views: "Working here has been a wonderful experience. The collaborative environment and challenging projects have improved my server-side technology skills.",
+        {   
+            src:"/images/oneStdnt.png",
+            studentName: "Aarav Sharma",
+            profile: "Web Developer",
+            views: "The company has an excellent work culture that encourages learning and growth. I was able to enhance my skills in HTML, CSS, and JavaScript significantly.",
+            placedAt: "TSC"
         },
-        {
-            studentName: "Rajesh Patel",
-            profile: "Full Stack Developer",
-            views: "The exposure to both frontend and backend projects has been invaluable. The company provides ample opportunities for professional development.",
+        {   
+            src:"/images/oneStdnt.png",
+            studentName: "Aarav Sharma",
+            profile: "Web Developer",
+            views: "The company has an excellent work culture that encourages learning and growth. I was able to enhance my skills in HTML, CSS, and JavaScript significantly.",
+            placedAt: "TSC"
         },
-        {
-            studentName: "Priya Singh",
-            profile: "Frontend Developer",
-            views: "I really appreciate the supportive team and the interesting projects. My ability to design user-friendly interfaces has improved greatly.",
+        {   
+            src:"/images/oneStdnt.png",
+            studentName: "Aarav Sharma",
+            profile: "Web Developer",
+            views: "The company has an excellent work culture that encourages learning and growth. I was able to enhance my skills in HTML, CSS, and JavaScript significantly.",
+            placedAt: "TSC"
         },
-        {
-            studentName: "Vikram Nair",
-            profile: "Backend Developer",
-            views: "The company focuses on innovation and professional growth. My experience here has significantly enhanced my database management and backend development skills.",
+        {   
+            src:"/images/oneStdnt.png",
+            studentName: "Aarav Sharma",
+            profile: "Web Developer",
+            views: "The company has an excellent work culture that encourages learning and growth. I was able to enhance my skills in HTML, CSS, and JavaScript significantly.",
+            placedAt: "TSC"
         },
-        {
-            studentName: "Ananya Iyer",
-            profile: "Full Stack Developer",
-            views: "The dynamic and engaging work environment has been fantastic. I have become proficient in both frontend and backend development, making me a versatile developer.",
-        },
-        {
-            studentName: "Ananya Iyer",
-            profile: "Full Stack Developer",
-            views: "The dynamic and engaging work environment has been fantastic. I have become proficient in both frontend and backend development, making me a versatile developer.",
-        },
-        {
-            studentName: "Ananya Iyer",
-            profile: "Full Stack Developer",
-            views: "The dynamic and engaging work environment has been fantastic. I have become proficient in both frontend and backend development, making me a versatile developer.",
+        {   
+            src:"/images/oneStdnt.png",
+            studentName: "Aarav Sharma",
+            profile: "Web Developer",
+            views: "The company has an excellent work culture that encourages learning and growth. I was able to enhance my skills in HTML, CSS, and JavaScript significantly.",
+            placedAt: "TSC"
         },
     ]
-    
 return (
         <>
         <div>
-           <div className="mt-10">
-           <p className="text-7xl font-semibold">"Where Dreams Meet Opportunities:</p>
-           <p className="text-7xl font-semibold ms-7 mt-1">Your Placement Journey</p>
-           <p className="text-7xl font-semibold ms-7 mt-1">Starts Here."</p>
+           <div className="justify-between mt-14 successStories">
+            <div className="w-full flex flex-col items-center justify-center">
+             <p className="text-8xl pt-14 pb-12 font-semibold">Success <span className="ourStories">Stories</span></p>
+             <p className="text-3xl font-semibold">Our learners are the centre of our universe. We take a lot of pride in their journey.</p>
+             <p className="text-3xl font-semibold mt-2">These stories and testimonials fuel our ambitions at tech.</p>
+            </div>
+            <div className="flex justify-center mt-10">
+              <button type="button" className="ourStories border-2 w-3/12 p-5 text-2xl font-semibold rounded-lg">
+                 EXPLORE OUR COURSES
+              </button>
+            </div>
+            <div className="w-full mt-10 pb-10">
+               <div className="m-auto fixedWidth border analysedDataContainer rounded-lg flex items-center justify-between">
+                    <div className="w-1/4 analysedData">
+                        <p className="text-center text-3xl">Student Placed</p>
+                        <p className="textColor text-center text-4xl mt-2 font-semibold">2000+</p>
+                    </div>
+                    <div className="h-16 border border-white">
+                        
+                    </div>
+                    <div className="w-1/4 analysedData">
+                        <p className="text-center text-3xl">Average Package</p>
+                        <p className="textColor text-center text-4xl mt-2 font-semibold">5LPA</p>
+                    </div>
+                    <div className="h-16 border border-white">
+                        
+                    </div>
+                    <div className="w-1/4 analysedData">
+                        <p className="text-center text-3xl">Salary Hike</p>
+                        <p className="textColor text-center text-4xl mt-2 font-semibold">50%</p>
+                    </div>
+                    <div className="h-16 border border-white">
+                        
+                    </div>
+                    <div className="w-1/4 analysedData">
+                        <p className="text-center text-3xl">Hiring Partners</p>
+                        <p className="textColor text-center text-4xl mt-2 font-semibold">700+</p>
+                    </div>
+               </div>
+            </div>
            </div>
 
-           <div className="flex justify-between mt-14">
-              <div className="placementContent">
-                <img src="/images/placementOne.jpg" className="rounded-lg"></img>
-              </div>
-              <div className="placementContent">
-              <img src="/images/placementThree.jpg" className="rounded-lg"></img>
-              </div>
-              <div className="placementContent">
-              <img src="/images/placementFour.jpg" className="rounded-lg"></img>
-              </div>
-           </div>
-
-           <div className="mt-10 pt-5">
-            <p className="text-6xl font-semibold">Placements</p>
-           <div className="flex flex-wrap justify-between border border-red-800">
+           <div className="pt-5 studentJourney">
+            <p className="text-5xl mt-10 text-center font-semibold">Take a peek into the journeys of our students</p>
+            <div className="flex flex-wrap fixedWidth justify-between p-5">
             {studentData?.map((item)=>
-                    <div className="border border-white mt-5 mb-10 placedStudentsCard">
-                        <div className="h-48 border border-red-800"> Profile</div>
-                        <div><p className="ms-5 studentName">{item?.studentName}</p></div>
+                    <div className="mt-5 mb-10 placedStudentsCard rounded-lg">
+                        <div className="relative">
+                            <div className="studentPic flex justify-center rounded-t-lg"> 
+                                <Image
+                                src={`${item.src}`}
+                                width={350}
+                                height={200}
+                                />
+                            </div>
+
+                            <div className="absolute flex justify-between studentName w-full border glass-card p-2">
+                                <div>
+                                <p className="text-black">{item?.studentName}</p>
+                                <p className="text-black">{item?.profile}</p>
+                                </div>
+                                <div>
+                                <p className="text-black">Placed At</p>
+                                <p className="placedAt text-black text-center rounded-lg">{item?.placedAt}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="p-3">
+                          <p className="text-xl">{item?.views}</p>
+                        </div>
                     </div>
                 )}
            </div>
+           </div>
+
+           <div>
+             <div className="border fixedWidth rounded-lg">
+                <div>
+                    <p>100% Job Assurance with Tech Academy Career</p>
+                </div>
+             </div>
            </div>
         </div>
         </>
