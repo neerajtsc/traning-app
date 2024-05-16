@@ -1,10 +1,10 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import RootLayout from "../layout";
 import "../../../styles/gallery.css";
 import Image from "next/image";
 const Gallery = () => {
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
   const fullText = "CULTURE";
   const [animationFinished, setAnimationFinished] = useState(false);
   useEffect(() => {
@@ -17,12 +17,11 @@ const Gallery = () => {
         clearInterval(interval);
         setAnimationFinished(true);
       }
-    }, 100); 
+    }, 100);
 
     return () => clearInterval(interval); // Clean up on component unmount
   }, [fullText]);
 
-  
   return (
     <RootLayout>
       {/* <div className="mt-32 text-white">
@@ -108,51 +107,78 @@ const Gallery = () => {
       </div> */}
       <div className="flex flex-col">
         <div className="mt-14 flex justify-center">
-        <div className="w-1/5">
-          <Image src="/images/handShake.jpg" alt="handShake" width={1000} height={233}/>
-        </div>
-        <div className="w-1/4 ms-40">
-          <Image src="/images/chilling.jpg" alt="chilling" width={1000} height={233}/>
-        </div>
+          <div className="w-1/5">
+            <Image
+              src="/images/handShake.jpg"
+              alt="handShake"
+              width={1000}
+              height={233}
+            />
+          </div>
+          <div className="w-1/4 ms-40">
+            <Image
+              src="/images/chilling.jpg"
+              alt="chilling"
+              width={1000}
+              height={233}
+            />
+          </div>
         </div>
         <div className="mb-5 flex justify-evenly">
           <div className="w-1/6">
-            <Image src ="/images/meeting.jpg" alt="meeting" width={1000} height={233}/>
+            <Image
+              src="/images/meeting.jpg"
+              alt="meeting"
+              width={1000}
+              height={233}
+            />
           </div>
           <div className="w-1/5 flex items-end flex-col justify-between">
             <div>
-            <div className="text-9xl text-white font-bold">{text}</div>
-            <div className="text-slate-500 italic text-end">-Building erudites of tommorrow</div>
+              <div className="text-9xl text-white font-bold">{text}</div>
+              <div className="text-slate-500 italic text-end">
+                -Building erudites of tommorrow
+              </div>
             </div>
             <div>
-            <Image src="/images/team.jpg" alt="team" width={1000} height={233}/>
+              <Image
+                src="/images/team.jpg"
+                alt="team"
+                width={1000}
+                height={233}
+              />
             </div>
           </div>
           <div className="w-1/4 pt-6">
-            <Image src="/images/work.jpg" alt="work" width={1000} height={233}/>
+            <Image
+              src="/images/work.jpg"
+              alt="work"
+              width={1000}
+              height={233}
+            />
           </div>
         </div>
         <div className="mt-5 fixedWidth">
-        <section className="1">
-        <section className="parallax">
-            <div className="parallax-inner">
-                <h1>Forests</h1>
-            </div>
-        </section>
-    <section className="parallax-1">
-        <div className="parallax-inner">
-            <h1>Beaches</h1>
-        </div>
-    </section>
-    </section>
+          <section className="sectionOne">
+            <section className="parallax">
+              <div className="parallax-inner">
+                <h1 className="ms-28">Team</h1>
+              </div>
+            </section>
+            {/* <section className="parallax-1">
+              <div className="parallax-inner">
+                <h1>Beaches</h1>
+              </div>
+            </section> */}
+          </section>
 
-    <section className="2">
-    <section className="parallax-2">
-        <div className="parallax-inner">
-            <h1>Mountains</h1>
-        </div>
-    </section>
-    </section>
+          {/* <section className="2">
+            <section className="parallax-2">
+              <div className="parallax-inner">
+                <h1>Mountains</h1>
+              </div>
+            </section>
+          </section> */}
         </div>
       </div>
     </RootLayout>

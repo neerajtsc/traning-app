@@ -16,8 +16,17 @@
     font-weight: 100;
     font-family: 'Open Sans', sans-serif;
 }
+.sectionOne{
+  background-image: url(/images/patternBack.jpg);
+  background-repeat: no-repeat;
+}
 .parallax{
-    background-image: url(/images/studyOne.jpg);
+    background-image: url(/images/chilling.jpg), url(/images/handShake.jpg), url(/images/chilling.jpg), url(/images/handShake.jpg) ,url(/images/chilling.jpg),url(/images/chilling.jpg);
+    background-repeat: no-repeat;
+    background-size: 380px 209px, 350px 249px, 346px 207px, 436px 300px, 470px 236px, 335px;
+    background-position: left 24% top 49px, left 62% top 20px, right 2% top 25%, left 40px bottom 21%, left 55% bottom 6%, right 4% bottom 14%;
+    color: white;
+    /* background-color: #b1f7be; */
 }
 .parallax-1{
     background: url('https://images.pexels.com/photos/3369569/pexels-photo-3369569.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') repeat fixed 100%;
@@ -30,8 +39,8 @@
     color: aliceblue;
 }
 .parallax-inner{
-    padding-top: 20%;
-    padding-bottom: 20%;
+    padding-top: 15%;
+    padding-bottom: 15%;
 }
 h3{
     margin-left: 50px;
