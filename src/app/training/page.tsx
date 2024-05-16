@@ -79,10 +79,10 @@ return (
                     <div className="flex flex-col ps-6 col-md-8" style={{width: "66.66%"}}>
                     <div className="text-white font-bold text-6xl mb-2"><span>{item?.title}</span></div>
                     <p className=" text-base text-wrap text-xl text-white py-5">{item?.content}</p>
-                <div className="flex items-center">
+                {/* <div className="flex items-center">
                     <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">{item?.buttonName}
                     </button>
-                </div>
+                </div> */}
                     </div>
                 </div>
         </div>
