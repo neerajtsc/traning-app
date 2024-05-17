@@ -42,7 +42,7 @@ const FrontEnd = () => {
           />
         </div>
       </div>
-      <div className="mt-5 border mb-5">
+      <div className="mt-5 border mb-5 rounded-xl">
         <div className="p-5">
           <p className="text-4xl">Experience the new way of learning</p>
           <p className="text-xl mt-3">
@@ -167,6 +167,104 @@ const FrontEnd = () => {
                     src={"/images/topicArrow.png"}
                   />
                   <p className="text-xl">Web Design Principles</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="border mt-10 rounded-xl p-5">
+            <p className="text-2xl">Outcomes</p>
+            <div className=" mt-4 flex">
+              <div className="p-5">
+                <div className="flex items-center">
+                  <Image
+                    alt="frontEnd"
+                    width={30}
+                    height={30}
+                    src={"/images/topicArrow.png"}
+                  />
+                  <p className="text-xl">Proficiency in building responsive and visually appealing websites using HTML, CSS, and JavaScript.</p>
+                </div>
+                <div className="flex items-center mt-5">
+                  <Image
+                    alt="frontEnd"
+                    width={30}
+                    height={30}
+                    src={"/images/topicArrow.png"}
+                  />
+                  <p className="text-xl">Ability to translate design mockups into fully functional web interfaces.</p>
+                </div>
+                <div className="flex items-center mt-5">
+                  <Image
+                    alt="frontEnd"
+                    width={30}
+                    height={30}
+                    src={"/images/topicArrow.png"}
+                  />
+                  <p className="text-xl">Competence in implementing interactive features and dynamic behavior using JavaScript libraries and frameworks.</p>
+                </div>
+                <div className="flex items-center mt-5">
+                  <Image
+                    alt="frontEnd"
+                    width={30}
+                    height={30}
+                    src={"/images/topicArrow.png"}
+                  />
+                  <p className="text-xl">Understanding of web performance optimization techniques to ensure fast and efficient loading times.</p>
+                </div>
+                <div className="flex items-center mt-5">
+                  <Image
+                    alt="frontEnd"
+                    width={30}
+                    height={30}
+                    src={"/images/topicArrow.png"}
+                  />
+                  <p className="text-xl">Skill in utilizing version control systems like Git for collaborative development and code management.</p>
+                </div>
+                <div className="flex items-center mt-5">
+                  <Image
+                    alt="frontEnd"
+                    width={30}
+                    height={30}
+                    src={"/images/topicArrow.png"}
+                  />
+                  <p className="text-xl">Familiarity with front end frameworks such as React, Angular, or Vue.js for building scalable web applications.</p>
+                </div>
+                <div className="flex items-center mt-5">
+                  <Image
+                    alt="frontEnd"
+                    width={30}
+                    height={30}
+                    src={"/images/topicArrow.png"}
+                  />
+                  <p className="text-xl">Knowledge of accessibility standards and best practices to ensure inclusivity and usability for all users.</p>
+                </div>
+                <div className="flex items-center mt-5">
+                  <Image
+                    alt="frontEnd"
+                    width={30}
+                    height={30}
+                    src={"/images/topicArrow.png"}
+                  />
+                  <p className="text-xl">Capability to debug and troubleshoot front end issues using browser developer tools and other debugging techniques.</p>
+                </div>
+                <div className="flex items-center mt-5">
+                  <Image
+                    alt="frontEnd"
+                    width={30}
+                    height={30}
+                    src={"/images/topicArrow.png"}
+                  />
+                  <p className="text-xl">Confidence in employing CSS preprocessors and frameworks to streamline the styling process and maintain code consistency.</p>
+                </div>
+                <div className="flex items-center mt-5">
+                  <Image
+                    alt="frontEnd"
+                    width={30}
+                    height={30}
+                    src={"/images/topicArrow.png"}
+                  />
+                  <p className="text-xl">Preparedness to embark on a career as a front end developer or continue learning and exploring advanced front end development concepts.</p>
                 </div>
               </div>
             </div>
