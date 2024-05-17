@@ -2,13 +2,19 @@
 import { useState } from "react";
 import "../../../styles/ourCourses.css";
 import Image from "next/image";
-
+import { useRouter } from "next/navigation"
 const OurCourses = (props : any) => {
+  const router = useRouter();
   const { setComponentVisible } = props;
 
   const handleMouseLeave = () => {
     setComponentVisible(false);
   }
+
+  const handleFrontEnd = () =>{
+    router.push('/frontend');
+  }
+
   return (
     <>
       <div onMouseLeave={handleMouseLeave} className="border rounded-xl flex border-white absolute bg-black text-white mt-28 courseContainer">
@@ -38,7 +44,7 @@ const OurCourses = (props : any) => {
             </div>
           </div>
           <div className="mt-5 p-4">
-            <div className="border flex courseCard rounded-xl p-4">
+            <div className="border flex courseCard rounded-xl p-4" onClick={handleFrontEnd}>
               <Image
                 alt="webDevelopment"
                 width={150}
