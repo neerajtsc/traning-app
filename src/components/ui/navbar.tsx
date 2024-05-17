@@ -1,5 +1,6 @@
 "use client"
 import React from "react";
+import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import {
     NavigationMenu,
@@ -13,7 +14,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
-
+import OurCourses from "./ourCourses";
 const components: { title: string; href: string; description: string }[] = [
     {
         title: "Alert Dialog",
@@ -60,6 +61,19 @@ export default function Navbar() {
     const handleEnroll = () => {
         router.push('/contact');
     }
+    const [isComponentVisible, setComponentVisible] = useState(false);
+
+    const handleMouseEnter = () => {
+        setComponentVisible(true);
+    };
+
+    const isMouseEnter = () =>{
+        setComponentVisible(false);
+    }
+
+    // const handleMouseLeave = () => {
+    //     setComponentVisible(false);
+    // };
     return (
         <nav className="fixed inset-x-0 top-0 p-5 z-50 dark:bg-gray-950 from-indigo-100 to-blue-200 via-purple-100 bg-black" >
             <div className="container px-4 md:px-6">
@@ -67,6 +81,7 @@ export default function Navbar() {
                     {/* <Link className="flex items-center gap-2 text-lg font-semibold" href="/">
                         <Image src="/images/tsc.png" width={150} height={100} alt="" className="" />
                     </Link> */}
+                    {isComponentVisible && <OurCourses setComponentVisible={setComponentVisible}/>}
                     <nav className=" flex items-center space-x-4">
                         <NavigationMenu>
                             <NavigationMenuList>
@@ -122,70 +137,70 @@ export default function Navbar() {
                                 </NavigationMenuItem> */}
                                 <NavigationMenuItem>
                                     <Link href="/" legacyBehavior passHref>
-                                        <NavigationMenuLink className={`${pathname === "/" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}>
+                                        <NavigationMenuLink className={`${pathname === "/" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`} onMouseEnter={isMouseEnter}>
                                             Home
                                         </NavigationMenuLink>
                                     </Link>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
                                     <Link href="/course" legacyBehavior passHref>
-                                        <NavigationMenuLink className={`${pathname === "/course" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}>
+                                        <NavigationMenuLink className={`${pathname === "/course" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`} onMouseEnter={handleMouseEnter}>
                                             Courses
                                         </NavigationMenuLink>
                                     </Link>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
                                     <Link href="/process" legacyBehavior passHref>
-                                        <NavigationMenuLink className={`${pathname === "/process" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}>
+                                        <NavigationMenuLink className={`${pathname === "/process" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`} onMouseEnter={isMouseEnter}>
                                             Process
                                         </NavigationMenuLink>
                                     </Link>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
                                     <Link href="/training" legacyBehavior passHref>
-                                        <NavigationMenuLink className={`${pathname === "/training" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}>
+                                        <NavigationMenuLink className={`${pathname === "/training" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`} onMouseEnter={isMouseEnter}>
                                             Training
                                         </NavigationMenuLink>
                                     </Link>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem >
                                     <Link href="/review" legacyBehavior passHref>
-                                        <NavigationMenuLink className={`${pathname === "/review" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}>
+                                        <NavigationMenuLink className={`${pathname === "/review" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`} onMouseEnter={isMouseEnter}>
                                             Review
                                         </NavigationMenuLink>
                                     </Link>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
                                     <Link href="/gallery" legacyBehavior passHref>
-                                        <NavigationMenuLink className={`${pathname === "/gallery" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}>
+                                        <NavigationMenuLink className={`${pathname === "/gallery" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`} onMouseEnter={isMouseEnter}>
                                             Gallery
                                         </NavigationMenuLink>
                                     </Link>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
                                     <Link href="/contact" legacyBehavior passHref>
-                                        <NavigationMenuLink className={`${pathname === "/contact" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}>
+                                        <NavigationMenuLink className={`${pathname === "/contact" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`} onMouseEnter={isMouseEnter}>
                                             Partner With Us
                                         </NavigationMenuLink>
                                     </Link>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
                                     <Link href="/faq" legacyBehavior passHref>
-                                        <NavigationMenuLink className={`${pathname === "/faq" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}>
+                                        <NavigationMenuLink className={`${pathname === "/faq" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`} onMouseEnter={isMouseEnter}>
                                             FAQ&apos;s
                                         </NavigationMenuLink>
                                     </Link>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
                                     <Link href="/blog" legacyBehavior passHref>
-                                        <NavigationMenuLink className={`${pathname === "/blog" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}>
+                                        <NavigationMenuLink className={`${pathname === "/blog" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`} onMouseEnter={isMouseEnter}>
                                             Blog
                                         </NavigationMenuLink>
                                     </Link>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
                                     <Link href="/placement" legacyBehavior passHref>
-                                        <NavigationMenuLink className="block text-xl select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                                        <NavigationMenuLink className="block text-xl select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground" onMouseEnter={isMouseEnter}>
                                             Placement
                                         </NavigationMenuLink>
                                     </Link>

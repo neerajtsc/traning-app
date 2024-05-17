@@ -39,26 +39,30 @@ export default function Home() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   let uspContent = [
     {
+        "id" : "01",
         "title" : "Work Culture",
         "content" :"Beyond mere productivity, the live office environment prioritizes the cultivation of a strong sense of community. From company-wide celebrations to team-building activities and volunteer initiatives, employees are encouraged to forge meaningful connections with their colleagues. ",
         "buttonName" : "Enroll Now"
     },
     {
+        "id" : "02",
         "title" : "Industrial Exposure",
         "content" :`This experiential learning not only reinforces classroom learning but also hones critical thinking skills, problem-solving abilities, and adaptability – qualities that are essential for success in any professional field..
         `,
         "buttonName" : "Explore"
     },
     {
+        "id" : "03",
         "title" : "ISO Certification",
-        "content" :`In a competitive job market, having an ISO certification can differentiate you from other candidates and position you as a highly qualified and trustworthy professional.As a first-year professional, earning an ISO certification showcases your commitment to excellence and adherence to international standards of quality and best practices.
+        "content" :`In a competitive job market, having an ISO certification can differentiate you from other candidates and position you as a highly qualified and trustworthy professional. Earning an ISO certification showcases your commitment and adherence to international standards of quality and best practices.
         `,
         "buttonName" : "Explore"  
     },
     {
+        "id" : "04",
         "title" : "Guarantee",
         "content" :`
-        The placement guarantee course from Trainings is specifically designed to help freshers embark upon their professional journey with confidence. These professional courses with job placement are curated with a holistic approach aimed at transforming beginners into job-ready professionals who can grow to become domain leaders.
+        The placement guarantee course from Trainings is specifically designed to help freshers embark upon their professional journey with confidence. These professional courses with job placement transforming beginners into job-ready professionals who can grow to become domain leaders.
         `,
         "buttonName" : "Explore"  
     }
@@ -96,23 +100,27 @@ export default function Home() {
 ];
 let trainingContent = [
   {
+      "id" : "01",
       "title" : "Profile Building",
       "content" :"Certainly! Building a strong profile as an IT professional is essential for showcasing your expertise, experience, and skills in the technology industry",
       "buttonName" : "Explore"
   },
   {
+      "id" : "02",
       "title" : "Learning",
       "content" :`Our courses are carefully crafted by industry experts to cover the latest technologies, tools. From programming languages and software development frameworks to cybersecurity and cloud computing, our curriculum is designed to address the most in-demand skills sought by employers.
       `,
       "buttonName" : "Explore"
   },
   {
+      "id" : "03",
       "title" : "Mock Interview",
       "content" :`Invest in your professional development and elevate your interview skills with our Mock Interview Program for IT professionals. Transitioning to a new role, our program provides the resources, support, and guidance you need to excel.
       `,
       "buttonName" : "Explore"  
   },
   {
+      "id" : "04",
       "title" : "Live Projects",
       "content" :`Elevate your IT career to new heights with our Live Project Program, where theory meets practice. Gain valuable experience, expand your skill set, and make meaningful contributions to businesses and organizations through hands-on projects that challenge and inspire.
       `,
@@ -546,13 +554,17 @@ const handleModal = () => {
         <div className="flex justify-between">
           { uspContent?.map((item, index) => (
             <>
-            <div className="p-6 bg-dark text-white rounded-lg shadow-2xl" style={{width: "24%", backgroundColor: "#0d0d0d"}} key={index}>
-            <a href="#">
-                <h5 className="mb-2 text-3xl font-bold tracking-tight">{item?.title}</h5>
-            </a>
-            <p className="mb-3 py-4 h-60">{item?.content}</p>
-            <button className="btn bg-green-500 text-white py-2 px-4 rounded font-bold" onClick={handleProcess}>Explore</button>
-        </div>
+            <div className="flip-card me-10">
+              <div className="flip-card-inner ">
+                <div className="flip-card-front flex flex-col rounded-lg">
+                  <p className="text-9xl idIndex">{item?.id}</p>
+                  <p className="text-5xl font-semibold rounded-t-lg mb-5 py-2 px-4">{item?.title}</p>
+                </div>
+                <div className="flip-card-back rounded-lg">
+                  {item?.content}
+                </div>
+              </div>
+            </div>
             </>
           ))
         
@@ -575,8 +587,7 @@ const handleModal = () => {
               <div className="flip-card-inner ">
                 <div className="flip-card-front flex flex-col rounded-lg">
                   <p className="text-9xl idIndex">{item?.id}</p>
-                  <p className="text-2xl font-semibold font-bold bg-green-500 rounded-t-lg mb-5 py-2 px-4">{item?.title}</p>
-                  <p className="mt-5 text-6xl">Step</p>
+                  <p className="text-5xl font-semibold font-bold rounded-t-lg mb-5 py-2 px-4">{item?.title}</p>
                 </div>
                 <div className="flip-card-back rounded-lg">
                   {item?.content}
@@ -608,13 +619,17 @@ const handleModal = () => {
       <div className="flex justify-between">
         { trainingContent?.map((item, index) => (
           <>
-          <div className="p-6 bg-dark text-white rounded-lg shadow-2xl" style={{width: "24%", backgroundColor: "#0d0d0d"}}>
-          <a href="#">
-              <h5 className="mb-2 text-3xl font-bold tracking-tight">{item?.title}</h5>
-          </a>
-          <p className="mb-3 py-4 h-56">{item?.content}</p>
-          <button className="btn bg-green-500 text-white py-2 px-4 rounded font-bold" onClick={handleTraining}>Explore</button>
-      </div>
+          <div className="flip-card me-10">
+              <div className="flip-card-inner ">
+                <div className="flip-card-front flex flex-col rounded-lg">
+                  <p className="text-9xl idIndex">{item?.id}</p>
+                  <p className="text-5xl font-semibold font-bold rounded-t-lg mb-5 py-2 px-4">{item?.title}</p>
+                </div>
+                <div className="flip-card-back rounded-lg">
+                  {item?.content}
+                </div>
+              </div>
+            </div>
           </>
         ))
       

@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import RootLayout from "../layout";
 import "../../../styles/gallery.css";
 import Image from "next/image";
@@ -22,6 +22,23 @@ const Gallery = () => {
     return () => clearInterval(interval); // Clean up on component unmount
   }, [fullText]);
 
+  const [scrolled, setScrolled] = useState(false);
+  const galleryRef = useRef<HTMLDivElement>(null);
+
+  const handleScroll = () => {
+    const top = galleryRef.current?.getBoundingClientRect().top;
+    if (top && top < window.innerHeight) {
+      setScrolled(true);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  
   return (
     <RootLayout>
       {/* <div className="mt-32 text-white">
@@ -158,28 +175,28 @@ const Gallery = () => {
             />
           </div>
         </div>
-        <div className="mt-5 fixedWidth">
+        {/* <div className="mt-5 fixedWidth">
           <section className="sectionOne">
             <section className="parallax">
               <div className="parallax-inner">
                 <h1 className="ms-28">Team</h1>
               </div>
             </section>
-            {/* <section className="parallax-1">
+            <section className="parallax-1">
               <div className="parallax-inner">
                 <h1>Beaches</h1>
               </div>
-            </section> */}
+            </section>
           </section>
 
-          {/* <section className="2">
+          <section className="2">
             <section className="parallax-2">
               <div className="parallax-inner">
                 <h1>Mountains</h1>
               </div>
             </section>
-          </section> */}
-        </div>
+          </section>
+        </div> */}
       </div>
     </RootLayout>
   );

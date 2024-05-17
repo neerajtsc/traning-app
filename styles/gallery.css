@@ -52,3 +52,12 @@ h1{
     font-size: 160px;
     text-align: center;
 }
+
+.ourGallery{
+    width: 25%;
+}
+
+.onlyBorder{
+    border: 1px solid red;
+}
+
