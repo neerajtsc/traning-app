@@ -11,7 +11,8 @@ import Contact from "../components/ui/contact";
 import FaqComponent from "./faqComponent";
 import Review from "../components/ui/review";
 import Image from "next/image";
-import Ceo from "../components/ui/ceo"
+import Ceo from "../components/ui/ceo";
+import Advisory from "@/components/ui/advisory"
 import {
   Accordion,
   AccordionContent,
@@ -28,7 +29,8 @@ import {
 import Autoplay from "embla-carousel-autoplay"
 import Link from 'next/link';
 import { useRouter } from "next/navigation"
-import Course from "./courseComponent"
+import Leadership from "@/components/ui/leadership"
+// import Course from "./courseComponent"
 
 export default function Home() {
   const [text, setText] = useState('');
@@ -451,9 +453,27 @@ const handleModal = () => {
       <div>
         <Ceo/>
       </div>
-      <div>
-        <Course/>
+
+      <div className="fadeIn">
+      <p className="my-8 text-center text-6xl font-bold text-slate-700 text-white">
+          Advisory Council
+        </p>
+        <div>
+          <Advisory/>
+        </div>
       </div>
+
+      <div className="fadeIn">
+      <p className="my-8 text-center text-6xl font-bold text-slate-700 text-white">
+          Leadership Team
+        </p>
+        <div>
+          <Leadership/>
+        </div>
+      </div>
+      {/* <div>
+        <Course/>
+      </div> */}
       <div className="fixedWidth pb-0 fadeIn">
         <p className="my-8 text-center text-6xl font-bold text-slate-700 text-white">
           We&apos;re working on
