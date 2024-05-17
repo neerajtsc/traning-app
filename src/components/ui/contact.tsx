@@ -1,3 +1,4 @@
+import Image from "next/image";
 import "../../../styles/contact.css";
 import React, { ChangeEvent, useState } from "react";
 const Contact = () => {
@@ -63,7 +64,13 @@ return (
                 <p className="w-4/5 mt-2">We work with ideas that inspire, engage and excite. Ideas that challenge convention and shape the trends. Through our awe-inspiring personal touch, we aim to make users fall in love with your brand.</p>
             </div> */}
             <div className="mt-14 flex">
-              <div className="contactUs">
+              <div className="relative">
+                <Image src = "/images/ge.jpg" alt="call" width={800} height={800} className="callMaskImage"/>
+                <div className="bg-white text-black rounded px-4 py-3 font-bold firstQues" >Which program is right for me ?</div>
+                <div className="bg-white text-black rounded px-4 py-3 font-bold secondQues">What all career oppotunities will I get after enrolling in a program ?</div>
+                <div className="bg-white text-black rounded px-4 py-3 font-bold thirdQues">Why Tech Academy vs others ?</div>
+              </div>
+              <div className="contactUs pt-6">
                 <div>
                   <input
                     type="text"
@@ -97,17 +104,29 @@ return (
                   ></input>
                   <span style={{ color: formErrors?.studentPhone ? 'red' : 'inherit' }}>{formErrors?.studentPhone}</span>
                 </div>
-              </div>
-              <div className="yourQuery">
-                <textarea className="contactTextBox" placeholder="Enter your Query" name="studentQuery"  onChange={(e) => handleChange(e)} ></textarea>
-              </div>
-            </div>
-            <div className="flex justify-end pe-2">
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Enter your query"
+                    className="contactInput"
+                    name="studentName"
+                    value={formData?.studentQuery}
+                    onChange={handleChange} 
+                  ></input>
+                  <span style={{ color: formErrors?.studentQuery ? 'red' : 'inherit' }}>{formErrors?.studentQuery}</span>
+                </div>
+              <div className="flex pe-2 ms-2">
               <button type="button" className="btmSubmit" onClick={handleSubmit}>
                 {" "}
                 SUBMIT APPLICATION
               </button>
             </div>
+              </div>
+              {/* <div className="yourQuery">
+                <textarea className="contactTextBox" placeholder="Enter your Query" name="studentQuery"  onChange={(e) => handleChange(e)} ></textarea>
+              </div> */}
+            </div>
+            
           </div>
         </div>
       </div>

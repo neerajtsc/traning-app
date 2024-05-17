@@ -547,7 +547,7 @@ const handleModal = () => {
                 <h5 className="mb-2 text-3xl font-bold tracking-tight">{item?.title}</h5>
             </a>
             <p className="mb-3 py-4 h-60">{item?.content}</p>
-            <button className="btn bg-green-500 text-white py-2 px-4 rounded font-bold" onClick={handleProcess}>Explore</button>
+             
         </div>
             </>
           ))

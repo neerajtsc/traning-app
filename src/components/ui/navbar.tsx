@@ -61,7 +61,40 @@ export default function Navbar() {
         router.push('/contact');
     }
     return (
-        <nav className="fixed inset-x-0 top-0 p-5 z-50 dark:bg-gray-950 from-indigo-100 to-blue-200 via-purple-100 bg-black" >
+        <>
+          <nav className="top-0 px-5 py-2 z-50 bg-white text-green-500">
+        <div className="container px-4 md:px-6">
+            <nav className="flex items-center justify-end space-x-4">
+            <NavigationMenu>
+                <NavigationMenuList>
+                <NavigationMenuItem>
+                                    <Link href="/faq" legacyBehavior passHref>
+                                        <NavigationMenuLink className={`${pathname === "/faq" && 'bg-green-500 text-white font-bold px-4 py-2 rounded w-4'}`}>
+                                            FAQ's
+                                        </NavigationMenuLink>
+                                    </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem className="ps-4">
+                                    <Link href="/process" legacyBehavior passHref>
+                                        <NavigationMenuLink className={`${pathname === "/process" && 'bg-green-500 text-white font-bold px-4 py-2 rounded w-4'}`}>
+                                            Process
+                                        </NavigationMenuLink>
+                                    </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem className="ps-4">
+                                    <Link href="/webinar" legacyBehavior passHref>
+                                        <NavigationMenuLink className={`${pathname === "/webinar" && 'bg-green-500 text-white font-bold px-4 py-2 rounded w-4'}`}>
+                                            Live Webinar
+                                        </NavigationMenuLink>
+                                    </Link>
+                </NavigationMenuItem>
+                </NavigationMenuList>
+                
+            </NavigationMenu>
+            </nav>
+            </div> 
+        </nav>
+        <nav className="p-5 z-50 dark:bg-gray-950 from-indigo-100 to-blue-200 via-purple-100 bg-black sticky top-0" style={{zIndex: "999"}}>   
             <div className="container px-4 md:px-6">
                 <div className="flex h-14 justify-between items-center">
                     {/* <Link className="flex items-center gap-2 text-lg font-semibold" href="/">
@@ -120,13 +153,13 @@ export default function Navbar() {
                                         </ul>
                                     </NavigationMenuContent>
                                 </NavigationMenuItem> */}
-                                <NavigationMenuItem>
+                                {/* <NavigationMenuItem>
                                     <Link href="/" legacyBehavior passHref>
                                         <NavigationMenuLink className={`${pathname === "/" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}>
                                             Home
                                         </NavigationMenuLink>
                                     </Link>
-                                </NavigationMenuItem>
+                                </NavigationMenuItem> */}
                                 <NavigationMenuItem>
                                     <Link href="/course" legacyBehavior passHref>
                                         <NavigationMenuLink className={`${pathname === "/course" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}>
@@ -134,13 +167,13 @@ export default function Navbar() {
                                         </NavigationMenuLink>
                                     </Link>
                                 </NavigationMenuItem>
-                                <NavigationMenuItem>
+                                {/* <NavigationMenuItem>
                                     <Link href="/process" legacyBehavior passHref>
                                         <NavigationMenuLink className={`${pathname === "/process" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}>
                                             Process
                                         </NavigationMenuLink>
                                     </Link>
-                                </NavigationMenuItem>
+                                </NavigationMenuItem> */}
                                 <NavigationMenuItem>
                                     <Link href="/training" legacyBehavior passHref>
                                         <NavigationMenuLink className={`${pathname === "/training" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}>
@@ -162,20 +195,20 @@ export default function Navbar() {
                                         </NavigationMenuLink>
                                     </Link>
                                 </NavigationMenuItem>
-                                <NavigationMenuItem>
+                                {/* <NavigationMenuItem>
                                     <Link href="/contact" legacyBehavior passHref>
                                         <NavigationMenuLink className={`${pathname === "/contact" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}>
                                             Partner With Us
                                         </NavigationMenuLink>
                                     </Link>
-                                </NavigationMenuItem>
-                                <NavigationMenuItem>
+                                </NavigationMenuItem> */}
+                                {/* <NavigationMenuItem>
                                     <Link href="/faq" legacyBehavior passHref>
                                         <NavigationMenuLink className={`${pathname === "/faq" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}>
                                             FAQ&apos;s
                                         </NavigationMenuLink>
                                     </Link>
-                                </NavigationMenuItem>
+                                </NavigationMenuItem> */}
                                 <NavigationMenuItem>
                                     <Link href="/blog" legacyBehavior passHref>
                                         <NavigationMenuLink className={`${pathname === "/blog" && 'bg-accent text-accent-foreground bg-accent text-accent-foreground'} block text-xl space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}>
@@ -209,11 +242,14 @@ export default function Navbar() {
                             </svg>
                         </a>
                          */}
-                         <button className="btn px-9 py-3 font-bold bg-green-500 text-white rounded-full" onClick={handleEnroll}>Enroll Now</button>
+                         <button className="bg-transparent hover:bg-green-500 text-green-500 font-bold hover:text-white py-3 px-4 border-2 border-green-500 hover:border-transparent rounded-full cursor-pointer" onClick={handleEnroll}>Partner with Us</button>
+                         <button className="btn px-9 py-3 font-bold bg-green-500 text-white rounded-full ms-2" onClick={handleEnroll}>Enroll Now</button>
+                         
                     </div>
                 </div>
             </div>
         </nav>
+        </>
     )
 }
 
