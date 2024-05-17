@@ -52,8 +52,8 @@ const FrontEnd = () => {
           </p>
           <div className="border mt-10 rounded-xl p-5">
             <p className="text-2xl">Topics Covered</p>
-            <div className="border mt-4 flex">
-              <div className="w-1/4 border">
+            <div className=" mt-4 flex">
+              <div className="w-1/4 p-5">
                 <div className="flex items-center">
                   <Image
                     alt="frontEnd"
@@ -61,57 +61,28 @@ const FrontEnd = () => {
                     height={30}
                     src={"/images/topicArrow.png"}
                   />
-                  <p>HTML</p>
+                  <p className="text-xl">HTML</p>
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-center mt-5">
                   <Image
                     alt="frontEnd"
                     width={30}
                     height={30}
                     src={"/images/topicArrow.png"}
                   />
-                  <p>HTML</p>
+                  <p className="text-xl">CSS</p>
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-center mt-5">
                   <Image
                     alt="frontEnd"
                     width={30}
                     height={30}
                     src={"/images/topicArrow.png"}
                   />
-                  <p>HTML</p>
-                </div>
-              </div>
-              <div className="w-1/4 border">
-                <div className="flex items-center">
-                  <Image
-                    alt="frontEnd"
-                    width={30}
-                    height={30}
-                    src={"/images/topicArrow.png"}
-                  />
-                  <p>HTML</p>
-                </div>
-                <div className="flex items-center">
-                  <Image
-                    alt="frontEnd"
-                    width={30}
-                    height={30}
-                    src={"/images/topicArrow.png"}
-                  />
-                  <p>HTML</p>
-                </div>
-                <div className="flex items-center">
-                  <Image
-                    alt="frontEnd"
-                    width={30}
-                    height={30}
-                    src={"/images/topicArrow.png"}
-                  />
-                  <p>HTML</p>
+                  <p className="text-xl">JavaScript</p>
                 </div>
               </div>
-              <div className="w-1/4 border">
+              <div className="w-1/4 p-5">
                 <div className="flex items-center">
                   <Image
                     alt="frontEnd"
@@ -119,28 +90,28 @@ const FrontEnd = () => {
                     height={30}
                     src={"/images/topicArrow.png"}
                   />
-                  <p>HTML</p>
+                  <p className="text-xl">Responsive Design</p>
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-center mt-5">
                   <Image
                     alt="frontEnd"
                     width={30}
                     height={30}
                     src={"/images/topicArrow.png"}
                   />
-                  <p>HTML</p>
+                  <p className="text-xl">CSS Frameworks</p>
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-center mt-5">
                   <Image
                     alt="frontEnd"
                     width={30}
                     height={30}
                     src={"/images/topicArrow.png"}
                   />
-                  <p>HTML</p>
+                  <p className="text-xl">CSS Preprocessors</p>
                 </div>
               </div>
-              <div className="w-1/4 border">
+              <div className="w-1/4 p-5">
                 <div className="flex items-center">
                   <Image
                     alt="frontEnd"
@@ -148,17 +119,28 @@ const FrontEnd = () => {
                     height={30}
                     src={"/images/topicArrow.png"}
                   />
-                  <p>HTML</p>
+                  <p className="text-xl">Version Control</p>
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-center mt-5">
                   <Image
                     alt="frontEnd"
                     width={30}
                     height={30}
                     src={"/images/topicArrow.png"}
                   />
-                  <p>HTML</p>
+                  <p className="text-xl">Front End Frameworks</p>
                 </div>
+                <div className="flex items-center mt-5">
+                  <Image
+                    alt="frontEnd"
+                    width={30}
+                    height={30}
+                    src={"/images/topicArrow.png"}
+                  />
+                  <p className="text-xl">Web Optimization</p>
+                </div>
+              </div>
+              <div className="w-1/4 p-5">
                 <div className="flex items-center">
                   <Image
                     alt="frontEnd"
@@ -166,7 +148,25 @@ const FrontEnd = () => {
                     height={30}
                     src={"/images/topicArrow.png"}
                   />
-                  <p>HTML</p>
+                  <p className="text-xl">Accessibility</p>
+                </div>
+                <div className="flex items-center mt-5">
+                  <Image
+                    alt="frontEnd"
+                    width={30}
+                    height={30}
+                    src={"/images/topicArrow.png"}
+                  />
+                  <p className="text-xl">Browser Developer Tools</p>
+                </div>
+                <div className="flex items-center mt-5">
+                  <Image
+                    alt="frontEnd"
+                    width={30}
+                    height={30}
+                    src={"/images/topicArrow.png"}
+                  />
+                  <p className="text-xl">Web Design Principles</p>
                 </div>
               </div>
             </div>
