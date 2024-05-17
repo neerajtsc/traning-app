@@ -44,14 +44,14 @@ const FrontEnd = () => {
       </div>
       <div className="mt-5 border mb-5 rounded-xl">
         <div className="p-5">
-          <p className="text-4xl">Experience the new way of learning</p>
+          <p className="text-5xl textColor">Experience the new way of learning</p>
           <p className="text-xl mt-3">
             Learn in live classes, solve real-life case studies, get mentored by
             the top 1% experts. Be the talent every recruiter in the industry is
             looking for!
           </p>
           <div className="border mt-10 rounded-xl p-5">
-            <p className="text-2xl">Topics Covered</p>
+            <p className="text-3xl textColor">Topics Covered</p>
             <div className=" mt-4 flex">
               <div className="w-1/4 p-5">
                 <div className="flex items-center">
@@ -173,7 +173,7 @@ const FrontEnd = () => {
           </div>
 
           <div className="border mt-10 rounded-xl p-5">
-            <p className="text-2xl">Outcomes</p>
+            <p className="text-3xl textColor ">Outcomes</p>
             <div className=" mt-4 flex">
               <div className="p-5">
                 <div className="flex items-center">
