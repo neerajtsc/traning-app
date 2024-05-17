@@ -108,7 +108,7 @@ export default function Navbar() {
             </nav>
             </div> 
         </nav>
-        <nav className="p-5 z-50 dark:bg-gray-950 from-indigo-100 to-blue-200 via-purple-100 bg-black sticky top-0" style={{zIndex: "999"}}>   
+        <nav className="p-5 z-50 dark:bg-gray-950 from-indigo-100 to-blue-200 via-purple-100 bg-black sticky top-0">   
             <div className="container px-4 md:px-6">
                 <div className="flex h-14 justify-between items-center">
                     {/* <Link className="flex items-center gap-2 text-lg font-semibold" href="/">
