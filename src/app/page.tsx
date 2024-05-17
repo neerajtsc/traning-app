@@ -66,23 +66,27 @@ export default function Home() {
 ];
   let processContent = [
     {
+        "id" : "01",
         "title" : "Enrollment",
         "content" :"Welcome to our course enrollment page! We're excited that you're interested in joining our program. Whether you're looking to expand your skills, advance your career, or pursue a new passion, we have a course that's right for you.",
         "buttonName" : "Enroll Now"
     },
     {
+        "id" : "02",
         "title" : "Shortlisting",
         "content" :`All applications will undergo an initial screening process to assess qualifications, experience, and suitability for the role. Our hiring team will carefully review each application to identify candidates who meet our criteria for shortlisting.
         `,
         "buttonName" : "Explore"
     },
     {
+        "id" : "03",
         "title" : "Interview",
         "content" :`Shortlisted candidates will be invited to participate in further assessments or interviews to evaluate their skills, competencies, and fit for the role. After thorough evaluation and consideration, we will select the most qualified candidate for the training process.
         `,
         "buttonName" : "Explore"  
     },
     {
+        "id" : "04",
         "title" : "Fee Submission",
         "content" :`Kindly submit your fee by after interview. Payment options include online payment or bank transfer. Late payments may incur additional charges.
         `,
@@ -567,13 +571,18 @@ const handleModal = () => {
         <div className="flex justify-between">
           { processContent?.map((item, index) => (
             <>
-            <div className="p-6 bg-dark text-white rounded-lg shadow-2xl" style={{width: "24%", backgroundColor: "#0d0d0d"}}>
-            <a href="#">
-                <h5 className="mb-2 text-3xl font-bold tracking-tight">{item?.title}</h5>
-            </a>
-            <p className="mb-3 py-4 h-56">{item?.content}</p>
-            <button className="btn bg-green-500 text-white py-2 px-4 rounded font-bold" onClick={handleProcess}>Explore</button>
-        </div>
+            <div className="flip-card me-10">
+              <div className="flip-card-inner ">
+                <div className="flip-card-front flex flex-col rounded-lg">
+                  <p className="text-9xl idIndex">{item?.id}</p>
+                  <p className="text-2xl font-semibold font-bold bg-green-500 rounded-t-lg mb-5 py-2 px-4">{item?.title}</p>
+                  <p className="mt-5 text-6xl">Step</p>
+                </div>
+                <div className="flip-card-back rounded-lg">
+                  {item?.content}
+                </div>
+              </div>
+            </div>
             </>
           ))
         
