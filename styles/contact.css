@@ -10,10 +10,30 @@
 width: 70%;
 padding: 1rem 0rem 0rem 1rem;
 }
+
 .contactUs{
-width: 30%;
+width: 35%;
 padding: 1rem 1rem 0rem 0rem;
 }
+
+.firstQues {
+    position: absolute;
+    top: 26px;
+    right: 88px;
+}
+
+.secondQues {
+    position: absolute;
+    top: 50%;
+    right: 500px;
+}
+
+.thirdQues {
+    position: absolute;
+    bottom: 33px;
+    right: 0;
+}
+
 .contactInput{
     background-color: #1e1e1e;
     font-size: 17px;
