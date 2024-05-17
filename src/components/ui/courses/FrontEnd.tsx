@@ -21,13 +21,13 @@ const FrontEnd = () => {
           <div className=" mt-10 pt-6 pb-6">
             <button
               type="button"
-              className="text-2xl w-2/5 p-4 rounded-xl bg-green-500"
+              className="text-2xl w-2/5 p-4 btnOfCourse rounded-xl"
             >
               Enroll Now
             </button>
             <button
               type="button"
-              className="border text-2xl w-2/5 p-4 rounded-xl ms-5"
+              className="text-2xl w-2/5 p-4 btnOfCourse rounded-xl ms-5"
             >
               Try Master Class
             </button>

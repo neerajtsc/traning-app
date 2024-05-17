@@ -25,3 +25,9 @@
 .textColor{
     color: #21c05c;
    }
+.btnOfCourse{
+    border: 2px solid #21c05c ;
+}
+.btnOfCourse:hover{
+    background-color: #21c05c;
+}
